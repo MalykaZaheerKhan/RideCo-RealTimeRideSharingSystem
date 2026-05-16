@@ -1,0 +1,46 @@
+/* DRIVER CARD — used on rating + tracking */
+.driver-card-dark {
+  background: var(--dp-bg);
+  border: 1px solid var(--dp-border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.driver-info-row { flex: 1; }
+.driver-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.driver-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--dp-warning);
+  font-weight: 600;
+}
+.driver-meta { font-size: 12px; color: var(--dp-sub); }
+
+/* COMMENT TEXTAREA FIX */
+textarea.dark-input {
+  background: var(--dp-bg);
+  border: 1px solid var(--dp-border);
+  color: var(--dp-text);
+  padding: 12px 16px;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  width: 100%;
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+textarea.dark-input:focus {
+  border-color: var(--dp-accent);
+  outline: none;
+}
+textarea.dark-input::placeholder {
+  color: var(--dp-sub);
+}

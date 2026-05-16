@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo — Earnings</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/driver/earnings.css">
+</head>
+<body class="dark">
+
+  <header class="dark-header">
+    <a href="../../index.html" class="logo"><em>Ride</em>Co</a>
+    <nav class="dark-nav">
+      <a href="../../index.html" style="color:var(--dp-sub);font-size:12px">⬅ Welcome</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 6px"></div>
+      <a href="dashboard.html">🚗 Dashboard</a>
+      <button class="nav-active">💵 Earnings</button>
+    </nav>
+  </header>
+
+  <div class="page-content">
+
+    <!-- Page Header -->
+    <div class="flex justify-between items-center mb-24">
+      <h2 class="section-title" style="margin-bottom:0">Earnings</h2>
+      <select id="earnings-filter" class="dark-input" style="width:auto;padding:8px 14px">
+        <option>This Week</option>
+        <option>Last Week</option>
+        <option>This Month</option>
+      </select>
+    </div>
+
+    <!-- Top Stats -->
+    <div class="grid-4 mb-24">
+      <div class="stat-card-dark">
+        <span class="stat-icon">💵</span>
+        <div id="stat-weekly" class="stat-value" style="color:var(--dp-success)">$482</div>
+        <div class="stat-label">This Week</div>
+        <div class="stat-change">↑ 12% vs last week</div>
+      </div>
+      <div class="stat-card-dark">
+        <span class="stat-icon">🚗</span>
+        <div id="stat-trips" class="stat-value">34</div>
+        <div class="stat-label">Completed Trips</div>
+      </div>
+      <div class="stat-card-dark">
+        <span class="stat-icon">⏱</span>
+        <div id="stat-hours" class="stat-value">28h</div>
+        <div class="stat-label">Hours Online</div>
+      </div>
+      <div class="stat-card-dark">
+        <span class="stat-icon">⭐</span>
+        <div id="stat-rating" class="stat-value" style="color:var(--dp-warning)">4.92</div>
+        <div class="stat-label">Driver Rating</div>
+      </div>
+    </div>
+
+    <!-- Two-column content -->
+    <div class="grid-2" style="gap:24px">
+
+      <!-- Recent Trips -->
+      <div class="dark-card">
+        <div class="dark-label mb-16">RECENT TRIPS</div>
+        <div id="earnings-list">
+
+          <div class="earnings-item">
+            <div class="avatar avatar-dark avatar-sm">AM</div>
+            <div style="flex:1">
+              <div style="font-weight:600;font-size:14px;color:#fff">123 Main St → Grand Central</div>
+              <div style="font-size:12px;color:var(--dp-sub)">Today, 2:34 PM · 3.2 mi · 14 min</div>
+            </div>
+            <div class="earnings-amount">+$10.74</div>
+          </div>
+
+          <div class="earnings-item">
+            <div class="avatar avatar-dark avatar-sm" style="background:var(--dp-success)">SL</div>
+            <div style="flex:1">
+              <div style="font-weight:600;font-size:14px;color:#fff">Westside Mall → Airport</div>
+              <div style="font-size:12px;color:var(--dp-sub)">Today, 12:15 PM · 8.4 mi · 31 min</div>
+            </div>
+            <div class="earnings-amount">+$18.40</div>
+          </div>
+
+          <div class="earnings-item">
+            <div class="avatar avatar-dark avatar-sm" style="background:var(--dp-warning);color:#111">MK</div>
+            <div style="flex:1">
+              <div style="font-weight:600;font-size:14px;color:#fff">Downtown → North Side</div>
+              <div style="font-size:12px;color:var(--dp-sub)">Today, 10:20 AM · 6.7 mi · 28 min</div>
+            </div>
+            <div class="earnings-amount">+$16.20</div>
+          </div>
+
+          <div class="earnings-item">
+            <div class="avatar avatar-dark avatar-sm" style="background:#AB47BC">PL</div>
+            <div style="flex:1">
+              <div style="font-weight:600;font-size:14px;color:#fff">City Hospital → Hotel Row</div>
+              <div style="font-size:12px;color:var(--dp-sub)">Yesterday, 6:45 PM · 4.2 mi · 19 min</div>
+            </div>
+            <div class="earnings-amount">+$12.80</div>
+          </div>
+
+          <div class="earnings-item">
+            <div class="avatar avatar-dark avatar-sm" style="background:var(--dp-danger)">KD</div>
+            <div style="flex:1">
+              <div style="font-weight:600;font-size:14px;color:#fff">JFK Airport → Midtown</div>
+              <div style="font-size:12px;color:var(--dp-sub)">Yesterday, 2:10 PM · 14.6 mi · 42 min</div>
+            </div>
+            <div class="earnings-amount">+$28.60</div>
+          </div>
+
+          <div class="earnings-item">
+            <div class="avatar avatar-dark avatar-sm">RC</div>
+            <div style="flex:1">
+              <div style="font-weight:600;font-size:14px;color:#fff">Central Park → Brooklyn</div>
+              <div style="font-size:12px;color:var(--dp-sub)">Jan 16 · 7.1 mi · 32 min</div>
+            </div>
+            <div class="earnings-amount">+$19.40</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right column: chart + goal + payout -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+
+        <!-- Daily Earnings Chart -->
+        <div class="dark-card">
+          <div class="dark-label mb-16">DAILY EARNINGS THIS WEEK</div>
+          <div class="earnings-chart">
+            <div class="earnings-bar-wrap">
+              <div class="earnings-bar-val">$62</div>
+              <div class="earnings-bar" style="height:52%;background:linear-gradient(180deg,var(--dp-accent),#4a00b0)"></div>
+              <div class="earnings-bar-day">Mon</div>
+            </div>
+            <div class="earnings-bar-wrap">
+              <div class="earnings-bar-val">$78</div>
+              <div class="earnings-bar" style="height:65%;background:linear-gradient(180deg,var(--dp-accent),#4a00b0)"></div>
+              <div class="earnings-bar-day">Tue</div>
+            </div>
+            <div class="earnings-bar-wrap">
+              <div class="earnings-bar-val">$54</div>
+              <div class="earnings-bar" style="height:45%;background:linear-gradient(180deg,var(--dp-accent),#4a00b0)"></div>
+              <div class="earnings-bar-day">Wed</div>
+            </div>
+            <div class="earnings-bar-wrap">
+              <div class="earnings-bar-val">$96</div>
+              <div class="earnings-bar" style="height:80%;background:linear-gradient(180deg,var(--dp-success),#006428)"></div>
+              <div class="earnings-bar-day">Thu</div>
+            </div>
+            <div class="earnings-bar-wrap">
+              <div class="earnings-bar-val">$108</div>
+              <div class="earnings-bar" style="height:90%;background:linear-gradient(180deg,var(--dp-success),#006428)"></div>
+              <div class="earnings-bar-day">Fri</div>
+            </div>
+            <div class="earnings-bar-wrap">
+              <div class="earnings-bar-val">$84</div>
+              <div class="earnings-bar" style="height:70%;background:linear-gradient(180deg,var(--dp-warning),#b37900)"></div>
+              <div class="earnings-bar-day">Sat</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekly Goal -->
+        <div class="dark-card">
+          <div class="dark-label mb-12">WEEKLY GOAL</div>
+          <div class="flex justify-between mb-8">
+            <span style="font-size:13px;color:var(--dp-sub)">Progress</span>
+            <span style="font-size:13px;font-weight:600;color:#fff">
+              <span id="goal-earned">$482</span> / <span id="goal-target">$600</span>
+            </span>
+          </div>
+          <div class="goal-progress-track">
+            <div id="goal-bar" class="goal-progress-fill" style="width:80%"></div>
+          </div>
+          <div id="goal-remaining" style="font-size:12px;color:var(--dp-sub);margin-top:4px">
+            $118 more to reach your weekly goal
+          </div>
+        </div>
+
+        <!-- Payout Info -->
+        <div class="dark-card">
+          <div class="dark-label mb-12">PAYOUT INFO</div>
+          <div class="payout-row">
+            <span class="payout-label">Next payout</span>
+            <span id="payout-date" class="payout-value">Monday, Jan 20</span>
+          </div>
+          <div class="payout-row">
+            <span class="payout-label">Payout amount</span>
+            <span id="payout-amount" class="payout-amount">$482.00</span>
+          </div>
+          <div class="payout-row">
+            <span class="payout-label">Account</span>
+            <span id="payout-account" class="payout-value">Chase ••••7892</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/api.js"></script>
+  <script>
+    checkAuth();
+
+    // PROTOTYPING: populate from data.js
+    /*
+    document.getElementById('stat-weekly').textContent  = '$' + CURRENT_DRIVER.weeklyEarnings;
+    document.getElementById('stat-trips').textContent   = '34';
+    document.getElementById('stat-hours').textContent   = '28h';
+    document.getElementById('stat-rating').textContent  = CURRENT_DRIVER.rating + ' ⭐';
+
+    const pct = Math.round((CURRENT_DRIVER.weeklyEarnings / CURRENT_DRIVER.weeklyGoal) * 100);
+    document.getElementById('goal-bar').style.width       = pct + '%';
+    document.getElementById('goal-earned').textContent    = '$' + CURRENT_DRIVER.weeklyEarnings;
+    document.getElementById('goal-target').textContent    = '$' + CURRENT_DRIVER.weeklyGoal;
+    document.getElementById('goal-remaining').textContent =
+      '$' + (CURRENT_DRIVER.weeklyGoal - CURRENT_DRIVER.weeklyEarnings) + ' more to reach your weekly goal';
+
+    document.getElementById('payout-date').textContent    = CURRENT_DRIVER.nextPayoutDate;
+    document.getElementById('payout-amount').textContent  = '$' + CURRENT_DRIVER.weeklyEarnings + '.00';
+    document.getElementById('payout-account').textContent = CURRENT_DRIVER.bankAccount;
+    */
+  </script>
+
+</body>
+</html>

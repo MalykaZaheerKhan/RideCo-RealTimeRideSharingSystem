@@ -1,0 +1,170 @@
+/* REQUEST PAGE LAYOUT */
+.req-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  min-height: calc(100vh - 64px);
+}
+
+/* LEFT PANEL */
+.req-panel {
+  background: var(--dp-card);
+  border-right: 1px solid var(--dp-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.req-panel-inner {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* STEP HEADER */
+.req-step-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--dp-border);
+  background: var(--dp-bg);
+}
+.req-step-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dp-sub);
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: var(--dp-card);
+  border: 1px solid var(--dp-border);
+  white-space: nowrap;
+}
+.req-step-pill.active {
+  background: rgba(124,77,255,0.12);
+  border-color: var(--dp-accent);
+  color: var(--dp-accent);
+}
+.req-step-pill.done {
+  background: rgba(0,200,83,0.1);
+  border-color: var(--dp-success);
+  color: var(--dp-success);
+}
+
+/* LOCATION BOX */
+.req-location-box {
+  background: var(--dp-bg);
+  border: 1px solid var(--dp-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.req-loc-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+}
+.req-loc-row + .req-loc-row {
+  border-top: 1px solid var(--dp-border);
+}
+.req-loc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.req-loc-input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--dp-text);
+  font-size: 14px;
+  font-family: var(--font-body);
+}
+.req-loc-input::placeholder { color: var(--dp-sub); }
+.req-swap-btn {
+  background: none;
+  border: 1px solid var(--dp-border);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--dp-sub);
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.req-swap-btn:hover {
+  border-color: var(--dp-accent);
+  color: var(--dp-accent);
+}
+
+/* RIDE TYPE CARDS */
+.req-ride-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.req-type-card {
+  background: var(--dp-bg);
+  border: 1.5px solid var(--dp-border);
+  border-radius: var(--radius-sm);
+  padding: 14px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.req-type-card:hover { border-color: var(--dp-accent); }
+.req-type-card.selected {
+  border-color: var(--dp-accent);
+  background: rgba(124,77,255,0.08);
+}
+.req-type-icon  { font-size: 22px; margin-bottom: 6px; }
+.req-type-name  { font-size: 12px; font-weight: 700; color: var(--dp-text); margin-bottom: 2px; }
+.req-type-price { font-size: 11px; color: var(--dp-sub); }
+
+/* FARE CARD */
+.req-fare-card {
+  background: var(--dp-bg);
+  border: 1px solid var(--dp-border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.req-fare-num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+}
+.req-fare-sub {
+  font-size: 12px;
+  color: var(--dp-sub);
+  margin-top: 2px;
+}
+
+/* MAP AREA */
+.req-map {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(135deg, #141414 0%, #1a1a2e 50%, #16213e 100%);
+  overflow: hidden;
+}
+.req-map::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(124,77,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,77,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}

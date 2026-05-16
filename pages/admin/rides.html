@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo Admin — Live Rides</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/admin/rides.css">
+</head>
+<body class="light">
+
+  <header class="light-header">
+    <a href="../../index.html" class="logo-light">
+      <em>Ride</em>Co <span class="admin-tag">ADMIN</span>
+    </a>
+    <nav class="light-nav">
+      <a href="../../index.html" style="color:var(--lp-sub);font-size:12px">⬅ Site</a>
+      <div style="width:1px;height:20px;background:var(--lp-border);margin:0 6px"></div>
+      <a href="dashboard.html">📊 Dashboard</a>
+      <a href="drivers.html">👥 Drivers</a>
+      <a href="rides.html" class="nav-active">🚗 Rides</a>
+      <a href="reports.html">📈 Reports</a>
+      <div class="avatar avatar-light avatar-sm" style="margin-left:8px">AD</div>
+    </nav>
+  </header>
+
+  <div class="admin-layout">
+
+    <aside class="admin-sidebar">
+      <div class="sidebar-section">MAIN</div>
+      <a href="dashboard.html" class="sidebar-item"><span class="sidebar-icon">📊</span> Dashboard</a>
+      <a href="drivers.html"   class="sidebar-item"><span class="sidebar-icon">👥</span> Drivers</a>
+      <a href="rides.html"     class="sidebar-item active"><span class="sidebar-icon">🚗</span> Live Rides</a>
+      <a href="reports.html"   class="sidebar-item"><span class="sidebar-icon">📈</span> Reports</a>
+      <div class="sidebar-section">SYSTEM</div>
+      <a href="#" class="sidebar-item"><span class="sidebar-icon">👤</span> Users</a>
+      <a href="#" class="sidebar-item"><span class="sidebar-icon">💳</span> Payments</a>
+      <a href="#" class="sidebar-item"><span class="sidebar-icon">⚙️</span> Settings</a>
+      <a href="login.html" class="sidebar-item" style="margin-top:auto;color:var(--lp-danger)">
+        <span class="sidebar-icon">🚪</span> Logout
+      </a>
+    </aside>
+
+    <main class="admin-main">
+
+      <div class="flex justify-between items-center mb-24">
+        <div>
+          <h1 style="font-family:var(--font-display);font-size:26px;font-weight:800;color:var(--lp-text)">
+            Live Ride Monitoring
+          </h1>
+          <p style="color:var(--lp-sub);font-size:13.5px;margin-top:4px">
+            <span id="live-count">342 active rides</span> right now · Auto-refreshes every 30s
+          </p>
+        </div>
+        <div class="flex gap-8 items-center">
+          <div class="live-count-badge">Live Monitoring</div>
+          <button class="btn btn-outline-light btn-sm">📥 Export</button>
+        </div>
+      </div>
+
+      <!-- QUICK STATS -->
+      <div class="grid-4 mb-24">
+        <div class="light-card" style="padding:16px 20px;border-left:3px solid var(--lp-primary)">
+          <div style="font-size:11px;font-weight:600;color:var(--lp-sub);text-transform:uppercase;margin-bottom:4px">Active Rides</div>
+          <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--lp-primary)">342</div>
+        </div>
+        <div class="light-card" style="padding:16px 20px;border-left:3px solid #F59E0B">
+          <div style="font-size:11px;font-weight:600;color:var(--lp-sub);text-transform:uppercase;margin-bottom:4px">Picking Up</div>
+          <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:#B45309">128</div>
+        </div>
+        <div class="light-card" style="padding:16px 20px;border-left:3px solid var(--lp-success)">
+          <div style="font-size:11px;font-weight:600;color:var(--lp-sub);text-transform:uppercase;margin-bottom:4px">In Transit</div>
+          <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--lp-success)">214</div>
+        </div>
+        <div class="light-card" style="padding:16px 20px;border-left:3px solid var(--lp-danger)">
+          <div style="font-size:11px;font-weight:600;color:var(--lp-sub);text-transform:uppercase;margin-bottom:4px">SOS Alerts</div>
+          <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--lp-danger)">2</div>
+        </div>
+      </div>
+
+      <!-- SOS ALERT -->
+      <div class="sos-banner">
+        <div class="sos-banner-icon">🚨</div>
+        <div style="flex:1">
+          <div class="sos-banner-title">SOS Alert — Ride #RDC-28480</div>
+          <div class="sos-banner-sub">Driver: K. Patel · Location: 5th Ave & 42nd St · Reported 3 min ago</div>
+        </div>
+        <button class="btn btn-danger-light btn-sm">Respond Now</button>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="rides-filter-bar">
+        <button class="rides-filter-btn active" data-status="all">All Rides</button>
+        <button class="rides-filter-btn" data-status="in_progress">In Progress</button>
+        <button class="rides-filter-btn" data-status="waiting">Picking Up</button>
+        <button class="rides-filter-btn" data-status="completed">Completed</button>
+      </div>
+
+      <!-- RIDES TABLE -->
+      <div class="light-card">
+        <div class="flex justify-between items-center mb-16">
+          <div class="section-title-light" style="margin-bottom:0">Active Rides</div>
+          <input class="light-input" style="width:240px;padding:9px 14px" placeholder="🔍 Search ride ID…">
+        </div>
+        <table class="table-light">
+          <thead>
+            <tr>
+              <th>Ride ID</th><th>Passenger</th><th>Driver</th>
+              <th>Route</th><th>Started</th><th>ETA</th>
+              <th>Fare</th><th>Status</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="live-rides-tbody">
+
+            <tr style="background:#FFF8F8">
+              <td><span style="font-weight:700;color:var(--lp-danger)">#RDC-28480</span></td>
+              <td><div class="flex items-center gap-8"><div class="avatar avatar-light avatar-sm" style="width:28px;height:28px;font-size:11px">BW</div>Beth W.</div></td>
+              <td>K. Patel</td>
+              <td style="font-size:12px">5th Ave → JFK</td>
+              <td style="color:var(--lp-sub);font-size:12px">2:14 PM</td>
+              <td>22 min</td>
+              <td style="font-weight:600">$24.80</td>
+              <td><span class="badge badge-danger-l">🚨 SOS</span></td>
+              <td><button class="btn btn-danger-light btn-sm" style="padding:6px 10px;font-size:12px">Respond</button></td>
+            </tr>
+
+            <tr>
+              <td style="font-weight:600">#RDC-28491</td>
+              <td><div class="flex items-center gap-8"><div class="avatar avatar-light avatar-sm" style="width:28px;height:28px;font-size:11px">AM</div>Alex M.</div></td>
+              <td>James R.</td>
+              <td style="font-size:12px">Main St → Grand Central</td>
+              <td style="color:var(--lp-sub);font-size:12px">2:20 PM</td>
+              <td>8 min</td>
+              <td style="font-weight:600">$10.40</td>
+              <td><span class="badge badge-primary-l">In Transit</span></td>
+              <td><button class="btn btn-outline-light btn-sm" style="padding:6px 10px;font-size:12px">View</button></td>
+            </tr>
+
+            <tr>
+              <td style="font-weight:600">#RDC-28488</td>
+              <td><div class="flex items-center gap-8"><div class="avatar avatar-sm" style="background:#00897B;color:#fff;width:28px;height:28px;font-size:11px">RC</div>Ryan C.</div></td>
+              <td>Sarah A.</td>
+              <td style="font-size:12px">Office Park → Airport</td>
+              <td style="color:var(--lp-sub);font-size:12px">2:18 PM</td>
+              <td>14 min</td>
+              <td style="font-weight:600">$22.10</td>
+              <td><span class="badge badge-primary-l">In Transit</span></td>
+              <td><button class="btn btn-outline-light btn-sm" style="padding:6px 10px;font-size:12px">View</button></td>
+            </tr>
+
+            <tr>
+              <td style="font-weight:600">#RDC-28482</td>
+              <td><div class="flex items-center gap-8"><div class="avatar avatar-sm" style="background:#F59E0B;color:#111;width:28px;height:28px;font-size:11px">JD</div>Jane D.</div></td>
+              <td>Marcus T.</td>
+              <td style="font-size:12px">Central Park → Brooklyn</td>
+              <td style="color:var(--lp-sub);font-size:12px">2:10 PM</td>
+              <td>19 min</td>
+              <td style="font-weight:600">$18.60</td>
+              <td><span class="badge badge-warning-l">Picking Up</span></td>
+              <td><button class="btn btn-outline-light btn-sm" style="padding:6px 10px;font-size:12px">View</button></td>
+            </tr>
+
+            <tr>
+              <td style="font-weight:600">#RDC-28475</td>
+              <td><div class="flex items-center gap-8"><div class="avatar avatar-sm" style="background:#AB47BC;color:#fff;width:28px;height:28px;font-size:11px">PK</div>P. Kumar</div></td>
+              <td>Paul L.</td>
+              <td style="font-size:12px">North Side → Midtown</td>
+              <td style="color:var(--lp-sub);font-size:12px">2:02 PM</td>
+              <td>6 min</td>
+              <td style="font-weight:600">$15.20</td>
+              <td><span class="badge badge-primary-l">In Transit</span></td>
+              <td><button class="btn btn-outline-light btn-sm" style="padding:6px 10px;font-size:12px">View</button></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script src="../../js/api.js"></script>
+  <script>
+    checkAuth();
+
+    // Filter tab active state
+    document.querySelectorAll('.rides-filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.rides-filter-btn').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+
+    /*
+    renderLiveRides(LIVE_RIDES);
+    document.getElementById('live-count').textContent =
+      LIVE_RIDES.filter(r => r.status === 'in_progress').length + ' active rides';
+    // BACKEND READY: setInterval(() => fetchLiveRides().then(renderLiveRides), 10000);
+    */
+  </script>
+
+</body>
+</html>

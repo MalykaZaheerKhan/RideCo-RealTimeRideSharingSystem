@@ -1,0 +1,268 @@
+/* ================================================================
+   pages.css
+   PURPOSE: Page-specific CSS blocks. One section per page.
+   Only linked by pages that need it — but easiest to link
+   everywhere alongside base.css.
+   ================================================================ */
+
+
+/* ================================================================
+   LANDING PAGE  (#p-landing / index.html)
+   ================================================================
+
+   Copy all CSS rules that start with .lp- from the original HTML.
+   These are ONLY used on the landing page.
+
+   Sections to copy:
+   - Hero section:
+       .lp-hero  .lp-hero-glow  .lp-hero-body
+       .lp-hero-left  .lp-hero-right
+       .lp-eyebrow  .lp-h1  .lp-hero-desc
+       .lp-hero-cta  .lp-hero-note
+       .lp-mini-card  .lp-mini-card-label  .lp-mini-card-val  .lp-mini-card-sub
+
+   - Divider:
+       .lp-divider-line
+
+   - How It Works section:
+       .lp-how  .lp-section-label  .lp-section-h2
+       .lp-steps  .lp-step  .lp-step-n  .lp-step-icon-wrap
+       .lp-step-title  .lp-step-desc
+
+   - Ride Types section:
+       .lp-rides  .lp-rides-inner  .lp-rides-grid
+       .lp-ride-item  .lp-ride-item.popular::after
+       .lp-ride-emoji  .lp-ride-name  .lp-ride-desc
+       .lp-ride-price-row  .lp-from  .lp-price-num
+
+   - Features section:
+       .lp-features  .lp-feat-grid  .lp-feat-item
+       .lp-feat-icon  .lp-feat-title  .lp-feat-desc
+
+   - Trusted Users section:
+       .lp-trusted  .lp-trusted-inner
+       .lp-users-row  .lp-user-card
+       .lp-user-av  .lp-user-av::after
+       .lp-user-name  .lp-user-meta
+       .lp-trust-row  .lp-trust-pill
+
+   - Reviews section:
+       .lp-reviews  .lp-reviews-header
+       .lp-overall-rating  .lp-rat-big  .lp-rat-stars  .lp-rat-count
+       .lp-reviews-grid  .lp-review-card  .lp-review-card.wide
+       .lp-review-top  .lp-review-user  .lp-review-av
+       .lp-review-name  .lp-review-date  .lp-review-stars-sm
+       .lp-review-text  .lp-review-tag  .lp-review-helpful
+
+   - Stats bar (animated counters):
+       .lp-stats-bar  .lp-stat-item  .cnt-num  .cnt-suffix
+
+   - Download section:
+       .lp-download  .lp-download-inner  .lp-dl-h2  .lp-dl-sub
+       .lp-dl-btns  .lp-dl-btn  .lp-dl-btn-icon
+       .lp-dl-btn-sub  .lp-dl-btn-name
+       .lp-dl-features  .lp-dl-feat  .lp-dl-feat-icon
+
+   - Driver CTA section:
+       .lp-driver  .lp-driver-h2  .lp-driver-sub
+       .lp-driver-stats  .lp-driver-stat
+       .lp-driver-stat-num  .lp-driver-stat-label
+
+   - Footer:
+       .lp-footer  .lp-footer-top  .lp-footer-logo
+       .lp-footer-tagline  .lp-footer-col-title
+       .lp-footer-links  .lp-footer-link  .lp-footer-bottom
+
+   ================================================================ */
+
+
+/* ================================================================
+   PASSENGER DASHBOARD  (passenger/dashboard.html)
+   ================================================================
+
+   Copy all CSS rules starting with .ph- :
+   .ph-layout         — sidebar + main two-column layout
+   .ph-sidebar        — left sidebar styles
+   .ph-greeting       — "Good morning, Alex" block
+   .ph-greeting-sub   — "Good morning," text
+   .ph-greeting-name  — name + emoji
+   .ph-nav-item       — sidebar nav button
+   .ph-nav-item.active
+   .ph-nav-icon       — emoji icon inside nav
+   .ph-main           — main content area scroll
+   .ph-section-title  — "Recent Rides" heading style
+
+   Also copy ride history item styles used on the dashboard:
+   .ride-history-item — flex row for each past ride
+   .ride-route  .ride-from  .ride-to
+   .ride-date   .ride-fare
+
+   ================================================================ */
+
+
+/* ================================================================
+   REQUEST A RIDE  (passenger/request.html)
+   ================================================================
+
+   Copy all CSS rules starting with .req- :
+   .req-layout        — two-column: left panel + right map
+   .req-panel         — left panel container
+   .req-panel-inner   — scrollable inner content
+   .req-step-header   — step indicator row at top
+   .req-step-pill     — individual step pill
+   .req-step-pill.done
+   .req-step-pill.active
+   .req-location-box  — pickup/destination box
+   .req-loc-row       — each input row
+   .req-loc-dot       — colored dot (green=pickup, purple=dest)
+   .req-loc-input     — text input inside location row
+   .req-swap-btn      — ⇅ swap button between inputs
+   .req-ride-types    — grid of ride type cards
+   .req-type-card     — individual ride type card
+   .req-type-card.selected
+   .req-type-icon  .req-type-name  .req-type-price
+   .req-fare-card     — estimated fare box at bottom
+   .req-fare-num      — big fare number e.g. "$10.40"
+   .req-fare-sub      — "3.2 mi · ~12 min" subtext
+
+   ================================================================ */
+
+
+/* ================================================================
+   LIVE TRACKING  (passenger/tracking.html)
+   ================================================================
+
+   Look for CSS used on the tracking/active ride page:
+   .driver-card-dark  — card showing driver avatar + info
+   .driver-info-row   — name, rating, car info column
+   .driver-name  .driver-rating  .driver-meta
+
+   Also the ETA / status display uses .dark-card styles
+   with custom inline styles — extract anything repeated
+   into named classes here.
+
+   ================================================================ */
+
+
+/* ================================================================
+   PAYMENT  (passenger/payment.html)
+   ================================================================
+
+   Copy payment-specific classes:
+   .payment-option    — each payment method row
+   .payment-radio     — circular radio indicator
+   .payment-icon      — card brand emoji/icon
+   .payment-name  .payment-detail
+
+   The "Add card" form uses standard .dark-input + .dark-label
+   from base.css — no new classes needed there.
+
+   ================================================================ */
+
+
+/* ================================================================
+   RIDE HISTORY  (passenger/history.html)
+   ================================================================
+
+   The history page uses .table-dark (already in base.css) and
+   .stat-card-dark (already in base.css).
+
+   If you extracted any history-specific layout classes from the
+   original HTML (wrappers, filter bar, export button row),
+   add them here.
+
+   ================================================================ */
+
+
+/* ================================================================
+   RATING  (passenger/rating.html)
+   ================================================================
+
+   The rating page uses:
+   - .driver-card-dark (copy from tracking section above)
+   - .stars + .star + .star.filled (already in base.css)
+   - Standard .btn, .dark-input, .badge, .dark-card styles
+
+   Add any rating-specific layout wrappers here if needed.
+
+   ================================================================ */
+
+
+/* ================================================================
+   DRIVER DASHBOARD  (driver/dashboard.html)
+   ================================================================
+
+   The driver dashboard uses .home-layout split:
+   .home-layout      — two-column: left panel + map
+   .home-panel       — left panel (driver stats + controls)
+
+   Also used here:
+   .earnings-item    — flex row in the earnings list
+   .earnings-amount  — green amount text on right
+
+   ================================================================ */
+
+
+/* ================================================================
+   DRIVER EARNINGS  (driver/earnings.html)
+   ================================================================
+
+   .earnings-item    — each trip row (avatar + route + amount)
+   .earnings-amount  — the green "+$xx.xx" on the right
+
+   The bar chart is built with inline divs — if you want to
+   extract the bar chart CSS, add .earnings-bar classes here.
+
+   ================================================================ */
+
+
+/* ================================================================
+   ADMIN LAYOUT  (admin/dashboard.html, admin/drivers.html, etc.)
+   ================================================================
+
+   Copy the admin sidebar + main layout classes:
+   .admin-layout     — flex row: sidebar + main
+   .admin-sidebar    — left sidebar (light theme)
+   .admin-main       — right content area
+
+   Sidebar items use .sidebar-item, .sidebar-icon, .sidebar-section
+   — copy those here:
+   .sidebar-item
+   .sidebar-item:hover
+   .sidebar-item.active
+   .sidebar-icon
+   .sidebar-section  — uppercase section label e.g. "MAIN", "SYSTEM"
+
+   ================================================================ */
+
+
+/* ================================================================
+   ADMIN REPORTS  (admin/reports.html)
+   ================================================================
+
+   .chart-placeholder  — CSS bar chart container
+   .chart-bar          — individual bar
+   .chart-bar:hover
+   .chart-bar-label    — label below each bar
+
+   ================================================================ */
+
+
+/* ================================================================
+   RESPONSIVE / MEDIA QUERIES
+   ================================================================
+
+   Add responsive breakpoints here at the bottom.
+   The original design has one breakpoint for the hero layout:
+
+   @media (max-width: 800px) {
+     .lp-hero-right { flex: none; width: 100%; }
+   }
+
+   Add more breakpoints as you build:
+   - Stack .grid-2, .grid-3, .grid-4 to single column on mobile
+   - Collapse .ph-layout sidebar (hide it, add hamburger)
+   - Collapse .req-layout to single column on mobile
+   - Collapse .admin-layout sidebar to hidden on mobile
+
+   ================================================================ */

@@ -1,0 +1,43 @@
+/* ================================================================
+   driver/ride-request.css — LAYER 3
+   Only for pages/driver/ride-request.html
+   Link: base.css + layouts.css + driver/ride-request.css
+   ================================================================ */
+
+/* REQUEST ALERT HEADER */
+.request-alert-header {
+  text-align: center;
+  padding: 16px 0;
+}
+.request-alert-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+/* COUNTDOWN PROGRESS BAR */
+.countdown-track {
+  width: 100%;
+  background: var(--dp-bg);
+  border-radius: 4px;
+  height: 4px;
+  overflow: hidden;
+}
+.countdown-bar {
+  height: 100%;
+  width: 70%;
+  background: var(--dp-warning);
+  border-radius: 4px;
+  transition: width 1s linear;
+}
+
+/* COUNTDOWN NUMBER — used inside subtitle text */
+.countdown-num {
+  color: var(--dp-warning);
+  font-weight: 700;
+}
+.countdown-num.urgent {
+  color: var(--dp-danger);
+}

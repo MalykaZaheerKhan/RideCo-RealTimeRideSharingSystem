@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo — Payment</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/passenger/payment.css">
+</head>
+<body class="dark">
+
+  <header class="dark-header">
+    <a href="../../index.html" class="logo"><em>Ride</em>Co</a>
+    <nav class="dark-nav">
+      <a href="../../index.html" style="color:var(--dp-sub);font-size:12px">⬅ Welcome</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 6px"></div>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="history.html">Skip →</a>
+    </nav>
+  </header>
+
+  <div class="auth-body">
+    <div class="auth-card" style="max-width:500px">
+
+      <div class="auth-title">Trip Completed 🎉</div>
+      <div class="auth-sub">Review your trip and confirm payment</div>
+
+      <div class="dark-card2 mb-24">
+        <div class="dark-label mb-12">TRIP SUMMARY</div>
+        <div class="ride-summary-row">
+          <span class="summary-key">From</span>
+          <span class="summary-val">123 Main Street</span>
+        </div>
+        <div class="ride-summary-row">
+          <span class="summary-key">To</span>
+          <span class="summary-val">Grand Central Terminal</span>
+        </div>
+        <div class="ride-summary-row">
+          <span class="summary-key">Distance</span>
+          <span class="summary-val">3.2 miles</span>
+        </div>
+        <div class="ride-summary-row">
+          <span class="summary-key">Duration</span>
+          <span class="summary-val">14 minutes</span>
+        </div>
+        <div class="ride-summary-row">
+          <span class="summary-key">Driver</span>
+          <span class="summary-val">James Rivera ⭐ 4.92</span>
+        </div>
+        <div class="divider" style="margin:8px 0"></div>
+        <div class="ride-summary-row">
+          <span class="summary-key">Base fare</span>
+          <span class="summary-val">$8.00</span>
+        </div>
+        <div class="ride-summary-row">
+          <span class="summary-key">Distance (3.2 mi)</span>
+          <span class="summary-val">$2.24</span>
+        </div>
+        <div class="ride-summary-row">
+          <span class="summary-key">Platform fee</span>
+          <span class="summary-val">$0.50</span>
+        </div>
+        <div class="ride-summary-row summary-total">
+          <span class="summary-key">Total</span>
+          <span class="summary-val">$10.74</span>
+        </div>
+      </div>
+
+      <div class="dark-label mb-8">PAYMENT METHOD</div>
+
+      <div class="payment-option selected">
+        <div class="payment-radio checked"></div>
+        <span class="payment-icon">💳</span>
+        <div>
+          <div class="payment-name">Visa •••• 4242</div>
+          <div class="payment-detail">Expires 09/27</div>
+        </div>
+      </div>
+      <div class="payment-option">
+        <div class="payment-radio"></div>
+        <span class="payment-icon">💰</span>
+        <div>
+          <div class="payment-name">RideCo Wallet</div>
+          <div class="payment-detail">Balance: $24.50</div>
+        </div>
+      </div>
+      <div class="payment-option">
+        <div class="payment-radio"></div>
+        <span class="payment-icon">📱</span>
+        <div>
+          <div class="payment-name">Apple Pay</div>
+          <div class="payment-detail">Device payment</div>
+        </div>
+      </div>
+
+      <!-- Confirm & Pay is an action — processes payment -->
+      <button class="btn btn-white btn-block btn-lg" style="margin-top:20px"
+              onclick="goTo('rating.html')">
+        Confirm &amp; Pay $10.74 →
+      </button>
+
+    </div>
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/ui.js"></script>
+
+</body>
+</html>

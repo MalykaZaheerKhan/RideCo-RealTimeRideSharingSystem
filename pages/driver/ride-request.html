@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo — New Ride Request</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/driver/ride-request.css">
+</head>
+<body class="dark">
+
+  <header class="dark-header">
+    <a href="../../index.html" class="logo"><em>Ride</em>Co</a>
+    <nav class="dark-nav">
+      <a href="../../index.html" style="color:var(--dp-sub);font-size:12px">⬅ Welcome</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 6px"></div>
+      <a href="dashboard.html">← Dashboard</a>
+    </nav>
+  </header>
+
+  <div class="home-layout">
+
+    <!-- LEFT PANEL -->
+    <aside class="home-panel" style="justify-content:center;gap:20px">
+
+      <!-- Alert Header -->
+      <div class="request-alert-header">
+        <div style="font-size:48px;margin-bottom:12px;animation:blink 1.5s ease infinite">🔔</div>
+        <div class="request-alert-title">New Ride Request!</div>
+        <div style="font-size:13px;color:var(--dp-sub)">
+          Expires in <span id="request-countdown" class="countdown-num">14</span>s
+        </div>
+      </div>
+
+      <!-- Countdown Bar -->
+      <div class="countdown-track w-full">
+        <div id="countdown-bar" class="countdown-bar"></div>
+      </div>
+
+      <!-- Passenger Info -->
+      <div class="dark-card2 w-full">
+        <div class="dark-label mb-12">PASSENGER</div>
+        <div class="flex items-center gap-16 mb-12">
+          <div class="avatar avatar-dark avatar-lg">AM</div>
+          <div>
+            <div id="req-passenger-name" style="font-weight:600;font-size:15px;color:#fff;margin-bottom:2px">Alex Morgan</div>
+            <div class="driver-rating">
+              <span id="req-passenger-rating">⭐ 4.7</span>
+              <span style="color:var(--dp-sub);font-weight:400;font-size:12px">&nbsp;(Passenger)</span>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="flex items-start gap-12">
+            <div class="location-dot green" style="margin-top:4px;flex-shrink:0"></div>
+            <div>
+              <div style="font-size:11px;color:var(--dp-sub);text-transform:uppercase;font-weight:600;margin-bottom:2px">Pickup · 0.4 mi away</div>
+              <div id="req-pickup" style="font-size:13.5px;color:#fff;font-weight:600">123 Main Street, Downtown</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-12">
+            <div class="location-dot purple" style="margin-top:4px;flex-shrink:0"></div>
+            <div>
+              <div style="font-size:11px;color:var(--dp-sub);text-transform:uppercase;font-weight:600;margin-bottom:2px">Destination</div>
+              <div id="req-destination" style="font-size:13.5px;color:#fff;font-weight:600">Grand Central Terminal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fare Breakdown -->
+      <div class="dark-card2 w-full">
+        <div class="flex justify-between items-center">
+          <div>
+            <div style="font-size:12px;color:var(--dp-sub);margin-bottom:4px">TRIP FARE</div>
+            <div id="req-fare" style="font-family:var(--font-display);font-size:32px;font-weight:800;color:var(--dp-success)">$10.40</div>
+            <div style="font-size:12px;color:var(--dp-sub)">
+              <span id="req-distance">3.2 mi</span> · ~<span id="req-duration">12 min</span>
+            </div>
+          </div>
+          <div style="text-align:right;font-size:13px;color:var(--dp-sub)">
+            <div>Base: $8.00</div>
+            <div>Per mile: $0.75</div>
+            <div style="color:var(--dp-success);margin-top:4px;font-weight:600">1.0× surge</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accept / Decline Buttons -->
+      <div class="grid-2 w-full" style="gap:12px">
+        <button id="decline-btn" class="btn btn-danger btn-lg"
+                onclick="window.location.href='dashboard.html'">
+          ✕ Decline
+        </button>
+        <button id="accept-btn" class="btn btn-success btn-lg"
+                onclick="window.location.href='active-ride.html'">
+          ✓ Accept
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- MAP -->
+    <div class="map-placeholder" style="min-height:500px">
+      <div class="map-route">
+        <div class="map-dot origin"></div>
+        <div class="map-dot dest"></div>
+        <div class="map-line"></div>
+        <div class="map-car">🚗</div>
+      </div>
+      <div class="map-inner" style="position:relative;z-index:2">
+        <span class="map-icon">📍</span>
+        <div class="map-label">Pickup &amp; destination preview</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/api.js"></script>
+  <script>
+    checkAuth();
+
+    // Countdown timer
+    let seconds = 14;
+    const countEl  = document.getElementById('request-countdown');
+    const barEl    = document.getElementById('countdown-bar');
+
+    const timer = setInterval(function() {
+      seconds--;
+      countEl.textContent = seconds;
+      barEl.style.width   = (seconds / 14 * 100) + '%';
+
+      if (seconds <= 5) countEl.classList.add('urgent');
+      if (seconds <= 0) {
+        clearInterval(timer);
+        window.location.href = 'dashboard.html';
+      }
+    }, 1000);
+
+    // Override buttons to clear timer first
+    document.getElementById('accept-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      clearInterval(timer);
+      // PROTOTYPING:
+      window.location.href = 'active-ride.html';
+      // BACKEND READY: acceptRide(INCOMING_REQUEST.id);
+    });
+
+    document.getElementById('decline-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      clearInterval(timer);
+      window.location.href = 'dashboard.html';
+      // BACKEND READY: declineRide(INCOMING_REQUEST.id);
+    });
+
+    // PROTOTYPING: populate from data.js
+    /*
+    const req = INCOMING_REQUEST;
+    document.getElementById('req-passenger-name').textContent   = req.passenger.name;
+    document.getElementById('req-passenger-rating').textContent = '⭐ ' + req.passenger.rating;
+    document.getElementById('req-pickup').textContent           = req.pickup;
+    document.getElementById('req-destination').textContent      = req.destination;
+    document.getElementById('req-distance').textContent         = req.distance;
+    document.getElementById('req-duration').textContent         = req.estimatedDuration;
+    document.getElementById('req-fare').textContent             = req.estimatedFare;
+    seconds = req.countdown;
+    */
+  </script>
+
+</body>
+</html>

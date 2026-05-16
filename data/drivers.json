@@ -1,0 +1,20 @@
+[
+  {
+    "id": "drv_001", "name": "James Rivera", "initials": "JR",
+    "email": "james@example.com", "phone": "+1 555 001 0001",
+    "rating": 4.92, "totalTrips": 847,
+    "status": "online", "car": "Toyota Camry · KAB 7821"
+  },
+  {
+    "id": "drv_002", "name": "Sarah Ahmed", "initials": "SA",
+    "email": "sarah@example.com", "phone": "+1 555 001 0002",
+    "rating": 4.80, "totalTrips": 514,
+    "status": "offline", "car": "Honda Civic · LMN 4421"
+  },
+  {
+    "id": "drv_003", "name": "Marcus Kim", "initials": "MK",
+    "email": "marcus@example.com", "phone": "+1 555 001 0003",
+    "rating": 4.75, "totalTrips": 293,
+    "status": "online", "car": "Ford Escape · OPQ 8834"
+  }
+]

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo — Register</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+</head>
+<body class="dark">
+
+  <header class="dark-header">
+    <a href="../../index.html" class="logo"><em>Ride</em>Co</a>
+    <nav class="dark-nav">
+      <a href="../../index.html">← Home</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 4px"></div>
+      <a href="../driver/login.html" style="color:var(--dp-success)">🚗 Driver Login</a>
+      <a href="login.html" class="btn btn-outline-dark btn-sm" style="padding:7px 16px">Sign In</a>
+    </nav>
+  </header>
+
+  <div class="auth-body">
+    <div class="auth-card" style="max-width:480px">
+
+      <div class="auth-title">Create account</div>
+      <div class="auth-sub">Join thousands of RideCo passengers</div>
+
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:0">
+          <label class="dark-label">First Name</label>
+          <input class="dark-input" type="text" placeholder="Alex">
+        </div>
+        <div class="form-group" style="margin-bottom:0">
+          <label class="dark-label">Last Name</label>
+          <input class="dark-input" type="text" placeholder="Morgan">
+        </div>
+      </div>
+      <div class="form-group" style="margin-top:16px">
+        <label class="dark-label">Email Address</label>
+        <input class="dark-input" type="email" placeholder="alex@example.com">
+      </div>
+      <div class="form-group">
+        <label class="dark-label">Phone Number</label>
+        <input class="dark-input" type="tel" placeholder="+1 234 567 8900">
+      </div>
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:0">
+          <label class="dark-label">Password</label>
+          <input class="dark-input" type="password" placeholder="••••••••">
+        </div>
+        <div class="form-group" style="margin-bottom:0">
+          <label class="dark-label">Confirm Password</label>
+          <input class="dark-input" type="password" placeholder="••••••••">
+        </div>
+      </div>
+      <div class="flex items-center gap-8 mt-16 mb-20" style="font-size:13px;color:var(--dp-sub)">
+        <input type="checkbox" style="accent-color:var(--dp-accent)">
+        <span>I agree to the
+          <a href="#" style="color:var(--dp-accent)">Terms of Service</a> and
+          <a href="#" style="color:var(--dp-accent)">Privacy Policy</a>
+        </span>
+      </div>
+
+      <button id="register-btn" class="btn btn-accent btn-block btn-lg">Create Account →</button>
+
+      <div class="auth-footer" style="margin-top:16px">
+        Already have an account? <a href="login.html">Sign in</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script>
+    document.getElementById('register-btn').addEventListener('click', function() {
+      // PROTOTYPING:
+      window.location.href = 'dashboard.html';
+      // BACKEND READY: registerPassenger(formData);
+    });
+  </script>
+
+</body>
+</html>

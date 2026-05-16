@@ -1,0 +1,72 @@
+/* ================================================================
+   driver/earnings.css — LAYER 3
+   Only for pages/driver/earnings.html
+   Link: base.css + layouts.css + driver/earnings.css
+   ================================================================ */
+
+/* WEEKLY GOAL PROGRESS BAR */
+.goal-progress-track {
+  height: 8px;
+  background: var(--dp-border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+.goal-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--dp-accent), var(--dp-success));
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* PAYOUT INFO ROWS */
+.payout-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+.payout-label {
+  font-size: 13px;
+  color: var(--dp-sub);
+}
+.payout-value {
+  font-size: 13px;
+  color: var(--dp-text);
+}
+.payout-amount {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dp-success);
+}
+
+/* DAILY EARNINGS CHART */
+.earnings-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 120px;
+  padding: 0 4px;
+}
+.earnings-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+}
+.earnings-bar-val {
+  font-size: 11px;
+  color: var(--dp-sub);
+  margin-bottom: auto;
+}
+.earnings-bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+.earnings-bar-day {
+  font-size: 10px;
+  color: var(--dp-sub);
+}

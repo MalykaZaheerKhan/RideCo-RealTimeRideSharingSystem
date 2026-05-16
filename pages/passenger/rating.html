@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo — Rate Your Ride</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/passenger/rating.css">
+</head>
+<body class="dark">
+
+  <header class="dark-header">
+    <a href="../../index.html" class="logo"><em>Ride</em>Co</a>
+    <nav class="dark-nav">
+      <a href="../../index.html" style="color:var(--dp-sub);font-size:12px">⬅ Welcome</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 6px"></div>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="history.html">Skip</a>
+    </nav>
+  </header>
+
+  <div class="auth-body">
+    <div class="auth-card" style="max-width:420px;text-align:center">
+
+      <div style="font-size:52px;margin-bottom:16px">🎉</div>
+      <div class="auth-title">How was your ride?</div>
+      <div class="auth-sub">Your feedback helps us improve</div>
+
+      <div class="driver-card-dark mb-24" style="text-align:left">
+        <div class="avatar avatar-dark avatar-lg">JR</div>
+        <div class="driver-info-row">
+          <div class="driver-name">James Rivera</div>
+          <div class="driver-rating">⭐ 4.92 · 847 rides</div>
+          <div class="driver-meta">Toyota Camry · KAB 7821</div>
+        </div>
+      </div>
+
+      <div class="dark-label mb-12">YOUR RATING</div>
+      <div class="stars" style="justify-content:center;margin-bottom:8px">
+        <span class="star filled" onclick="setRating(1)">★</span>
+        <span class="star filled" onclick="setRating(2)">★</span>
+        <span class="star filled" onclick="setRating(3)">★</span>
+        <span class="star filled" onclick="setRating(4)">★</span>
+        <span class="star"        onclick="setRating(5)">★</span>
+      </div>
+      <div style="font-size:13px;color:var(--dp-sub);margin-bottom:20px">Tap to rate</div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px">
+        <span class="badge badge-success" style="cursor:pointer;padding:7px 14px;font-size:12px">✓ Friendly</span>
+        <span class="badge badge-accent"  style="cursor:pointer;padding:7px 14px;font-size:12px">✓ On Time</span>
+        <span class="badge badge-sub"     style="cursor:pointer;padding:7px 14px;font-size:12px">Clean Car</span>
+        <span class="badge badge-sub"     style="cursor:pointer;padding:7px 14px;font-size:12px">Safe Driving</span>
+        <span class="badge badge-sub"     style="cursor:pointer;padding:7px 14px;font-size:12px">Good Music</span>
+      </div>
+
+      <div class="form-group" style="text-align:left">
+        <label class="dark-label">COMMENT (OPTIONAL)</label>
+        <textarea class="dark-input" rows="3"
+                  placeholder="Share your experience…"
+                  style="resize:none"></textarea>
+      </div>
+
+      <div style="text-align:left">
+        <div class="dark-label mb-8">ADD A TIP</div>
+        <div style="display:flex;gap:8px;margin-bottom:20px">
+          <button class="btn btn-ghost btn-sm flex-1">$1</button>
+          <button class="btn btn-accent btn-sm flex-1">$2</button>
+          <button class="btn btn-ghost btn-sm flex-1">$5</button>
+          <button class="btn btn-ghost btn-sm flex-1">Custom</button>
+        </div>
+      </div>
+
+      <!-- Submit rating is an action — posts review -->
+      <button class="btn btn-accent btn-block btn-lg"
+              onclick="goTo('history.html')">
+        Submit Rating →
+      </button>
+
+    </div>
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script>
+    function setRating(n) {
+      document.querySelectorAll('.star').forEach(function(s, i) {
+        s.classList.toggle('filled', i < n);
+      });
+    }
+  </script>
+
+</body>
+</html>

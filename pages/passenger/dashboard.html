@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo — Home</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/passenger/dashboard.css">
+</head>
+<body class="dark">
+
+  <header class="dark-header">
+    <a href="../../index.html" class="logo"><em>Ride</em>Co</a>
+    <nav class="dark-nav">
+      <a href="../../index.html" style="color:var(--dp-sub);font-size:12px">⬅ Welcome</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 6px"></div>
+      <a href="dashboard.html" class="nav-active">🏠 Home</a>
+      <a href="history.html">📋 History</a>
+      <a href="payment.html">💳 Payment</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 8px"></div>
+      <div class="avatar avatar-dark avatar-sm">AM</div>
+    </nav>
+  </header>
+
+  <div class="ph-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="ph-sidebar">
+      <div class="ph-greeting">
+        <div class="ph-greeting-sub">Good morning,</div>
+        <div class="ph-greeting-name">Alex Morgan 👋</div>
+      </div>
+      <a href="dashboard.html" class="ph-nav-item active">
+        <span class="ph-nav-icon">🏠</span> Dashboard
+      </a>
+      <a href="request.html" class="ph-nav-item">
+        <span class="ph-nav-icon">🚗</span> Request a Ride
+      </a>
+      <a href="history.html" class="ph-nav-item">
+        <span class="ph-nav-icon">📋</span> Ride History
+      </a>
+      <a href="payment.html" class="ph-nav-item">
+        <span class="ph-nav-icon">💳</span> Payment Methods
+      </a>
+      <a href="#" class="ph-nav-item">
+        <span class="ph-nav-icon">⭐</span> Saved Places
+      </a>
+      <a href="#" class="ph-nav-item">
+        <span class="ph-nav-icon">👤</span> My Profile
+      </a>
+      <a href="#" class="ph-nav-item">
+        <span class="ph-nav-icon">🔔</span> Notifications
+      </a>
+      <a href="../../index.html" class="ph-nav-item" style="margin-top:auto;color:var(--dp-sub)">
+        <span class="ph-nav-icon">🚪</span> Sign Out
+      </a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="ph-main">
+
+      <!-- STATS -->
+      <div class="grid-4 mb-24">
+        <div class="stat-card-dark">
+          <div class="stat-value">47</div>
+          <div class="stat-label">Total Rides</div>
+          <div class="stat-change">↑ 3 this month</div>
+        </div>
+        <div class="stat-card-dark">
+          <div class="stat-value">$482</div>
+          <div class="stat-label">Total Spent</div>
+          <div class="stat-change">↑ $48 this month</div>
+        </div>
+        <div class="stat-card-dark">
+          <div class="stat-value">142 mi</div>
+          <div class="stat-label">Distance Travelled</div>
+        </div>
+        <div class="stat-card-dark">
+          <div class="stat-value">4.8 ⭐</div>
+          <div class="stat-label">Your Rating</div>
+        </div>
+      </div>
+
+      <!-- REQUEST RIDE CTA -->
+      <div class="dark-card mb-24"
+           style="background:rgba(124,77,255,0.08);border-color:rgba(124,77,255,0.3);
+                  display:flex;align-items:center;justify-content:space-between;gap:24px">
+        <div>
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:700;
+                      color:#fff;margin-bottom:6px">Ready to go somewhere?</div>
+          <div style="font-size:14px;color:var(--dp-sub)">
+            Drivers are nearby — avg wait time 68 seconds right now
+          </div>
+        </div>
+        <a href="request.html" class="btn btn-white btn-lg" style="flex-shrink:0">
+          🚗 Request a Ride →
+        </a>
+      </div>
+
+      <!-- RECENT RIDES -->
+      <div class="ph-section-title">Recent Rides</div>
+      <div class="dark-card mb-24">
+
+        <div class="ride-history-item">
+          <div style="font-size:22px">🚙</div>
+          <div class="ride-route">
+            <div class="ride-from">123 Main St → Grand Central Terminal</div>
+            <div class="ride-to">Jan 18 · Comfort · James R. ⭐ 4.92</div>
+          </div>
+          <div class="ride-date">14 min</div>
+          <div class="ride-fare">$10.74</div>
+          <span class="badge badge-success">Done</span>
+        </div>
+
+        <div class="ride-history-item">
+          <div style="font-size:22px">🚗</div>
+          <div class="ride-route">
+            <div class="ride-from">Office Park → Central Station</div>
+            <div class="ride-to">Jan 16 · Economy · Sarah A. ⭐ 4.8</div>
+          </div>
+          <div class="ride-date">22 min</div>
+          <div class="ride-fare">$16.40</div>
+          <span class="badge badge-success">Done</span>
+        </div>
+
+        <div class="ride-history-item">
+          <div style="font-size:22px">🚐</div>
+          <div class="ride-route">
+            <div class="ride-from">JFK Airport → Midtown Hotel</div>
+            <div class="ride-to">Jan 12 · XL · Cancelled</div>
+          </div>
+          <div class="ride-date">—</div>
+          <div class="ride-fare" style="color:var(--dp-danger)">$0.00</div>
+          <span class="badge badge-danger">Cancelled</span>
+        </div>
+
+        <div style="text-align:center;padding:12px 0 0">
+          <a href="history.html" class="btn btn-outline-dark btn-sm">View All 47 Rides →</a>
+        </div>
+
+      </div>
+
+      <!-- SAVED PLACES + WALLET -->
+      <div class="grid-2 gap-24">
+
+        <div class="dark-card">
+          <div class="section-title" style="font-size:16px;margin-bottom:16px">📍 Saved Places</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div class="input-location" style="cursor:pointer">
+              <span style="font-size:16px">🏠</span>
+              <div>
+                <div style="font-size:13.5px;font-weight:600;color:#fff">Home</div>
+                <div style="font-size:12px;color:var(--dp-sub)">123 Main Street, Downtown</div>
+              </div>
+            </div>
+            <div class="input-location" style="cursor:pointer">
+              <span style="font-size:16px">💼</span>
+              <div>
+                <div style="font-size:13.5px;font-weight:600;color:#fff">Work</div>
+                <div style="font-size:12px;color:var(--dp-sub)">450 Park Ave, Midtown</div>
+              </div>
+            </div>
+            <div class="input-location" style="cursor:pointer;border-style:dashed">
+              <span style="font-size:16px">＋</span>
+              <span style="font-size:13px;color:var(--dp-sub)">Add a saved place</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dark-card">
+          <div class="section-title" style="font-size:16px;margin-bottom:16px">💳 RideCo Wallet</div>
+          <div style="text-align:center;padding:16px 0">
+            <div style="font-family:var(--font-display);font-size:40px;font-weight:800;
+                        color:var(--dp-success)">$24.50</div>
+            <div style="font-size:13px;color:var(--dp-sub);margin-top:4px">Available balance</div>
+          </div>
+          <div class="divider"></div>
+          <div class="flex justify-between text-sm" style="padding:8px 0;color:var(--dp-sub)">
+            <span>Visa •••• 4242</span>
+            <span style="color:var(--dp-success)">Default</span>
+          </div>
+          <a href="payment.html" class="btn btn-outline-dark btn-block btn-sm mt-8">
+            Manage Payment →
+          </a>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/ui.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo Admin — Dashboard</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
+</head>
+<body class="light">
+
+  <header class="light-header">
+    <a href="../../index.html" class="logo-light">
+      <em>Ride</em>Co <span class="admin-tag">ADMIN</span>
+    </a>
+    <nav class="light-nav">
+      <a href="../../index.html" style="color:var(--lp-sub);font-size:12px">⬅ Site</a>
+      <div style="width:1px;height:20px;background:var(--lp-border);margin:0 6px"></div>
+      <a href="dashboard.html" class="nav-active">📊 Dashboard</a>
+      <a href="drivers.html">👥 Drivers</a>
+      <a href="rides.html">🚗 Rides</a>
+      <a href="reports.html">📈 Reports</a>
+      <div class="avatar avatar-light avatar-sm" style="margin-left:8px">AD</div>
+    </nav>
+  </header>
+
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-section">MAIN</div>
+      <a href="dashboard.html" class="sidebar-item active">
+        <span class="sidebar-icon">📊</span> Dashboard
+      </a>
+      <a href="drivers.html" class="sidebar-item">
+        <span class="sidebar-icon">👥</span> Drivers
+      </a>
+      <a href="rides.html" class="sidebar-item">
+        <span class="sidebar-icon">🚗</span> Live Rides
+      </a>
+      <a href="reports.html" class="sidebar-item">
+        <span class="sidebar-icon">📈</span> Reports
+      </a>
+      <div class="sidebar-section">SYSTEM</div>
+      <a href="#" class="sidebar-item"><span class="sidebar-icon">👤</span> Users</a>
+      <a href="#" class="sidebar-item"><span class="sidebar-icon">💳</span> Payments</a>
+      <a href="#" class="sidebar-item"><span class="sidebar-icon">⚙️</span> Settings</a>
+      <a href="login.html" class="sidebar-item" style="margin-top:auto;color:var(--lp-danger)">
+        <span class="sidebar-icon">🚪</span> Logout
+      </a>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+
+      <!-- PAGE HEADER -->
+      <div class="flex justify-between items-center mb-24">
+        <div>
+          <h1 style="font-family:var(--font-display);font-size:26px;font-weight:800;color:var(--lp-text)">
+            Dashboard Overview
+          </h1>
+          <p style="color:var(--lp-sub);font-size:13.5px;margin-top:4px">
+            Wednesday, January 18, 2025 · Last updated: just now
+          </p>
+        </div>
+        <div class="flex gap-8">
+          <button class="btn btn-outline-light btn-sm">📥 Export</button>
+          <button class="btn btn-primary-light btn-sm">🔄 Refresh</button>
+        </div>
+      </div>
+
+      <!-- KPI CARDS -->
+      <div class="grid-4 mb-32">
+        <div class="stat-card-light">
+          <span class="stat-icon">👤</span>
+          <div id="kpi-users" class="stat-value">12,480</div>
+          <div class="stat-label">Total Users</div>
+          <div style="font-size:12px;color:var(--lp-success);margin-top:8px;font-weight:500">↑ +248 this week</div>
+        </div>
+        <div class="stat-card-light">
+          <span class="stat-icon">🚗</span>
+          <div id="kpi-drivers" class="stat-value">2,847</div>
+          <div class="stat-label">Active Drivers</div>
+          <div style="font-size:12px;color:var(--lp-success);margin-top:8px;font-weight:500">↑ 84% online now</div>
+        </div>
+        <div class="stat-card-light">
+          <span class="stat-icon">📍</span>
+          <div id="kpi-rides" class="stat-value" style="color:var(--lp-primary)">342</div>
+          <div class="stat-label">Active Rides</div>
+          <div style="font-size:12px;color:var(--lp-primary);margin-top:8px;font-weight:500">→ Live right now</div>
+        </div>
+        <div class="stat-card-light">
+          <span class="stat-icon">💰</span>
+          <div id="kpi-revenue" class="stat-value" style="color:var(--lp-success)">$84.2K</div>
+          <div class="stat-label">Revenue Today</div>
+          <div style="font-size:12px;color:var(--lp-success);margin-top:8px;font-weight:500">↑ +6% vs yesterday</div>
+        </div>
+      </div>
+
+      <!-- SECONDARY STATS -->
+      <div class="grid-4 mb-32">
+        <div class="light-card" style="padding:16px 20px">
+          <div style="font-size:12px;color:var(--lp-sub);text-transform:uppercase;font-weight:600;margin-bottom:6px">Rides Today</div>
+          <div style="font-family:var(--font-display);font-size:26px;font-weight:700;color:var(--lp-text)">8,204</div>
+        </div>
+        <div class="light-card" style="padding:16px 20px">
+          <div style="font-size:12px;color:var(--lp-sub);text-transform:uppercase;font-weight:600;margin-bottom:6px">Avg Fare</div>
+          <div style="font-family:var(--font-display);font-size:26px;font-weight:700;color:var(--lp-text)">$10.28</div>
+        </div>
+        <div class="light-card" style="padding:16px 20px">
+          <div style="font-size:12px;color:var(--lp-sub);text-transform:uppercase;font-weight:600;margin-bottom:6px">Cancellation</div>
+          <div style="font-family:var(--font-display);font-size:26px;font-weight:700;color:var(--lp-warning)">4.2%</div>
+        </div>
+        <div class="light-card" style="padding:16px 20px">
+          <div style="font-size:12px;color:var(--lp-sub);text-transform:uppercase;font-weight:600;margin-bottom:6px">Avg Rating</div>
+          <div style="font-family:var(--font-display);font-size:26px;font-weight:700;color:var(--lp-text)">4.81 ⭐</div>
+        </div>
+      </div>
+
+      <!-- ACTIVITY + QUICK ACTIONS -->
+      <div class="grid-2 gap-24 mb-32">
+
+        <!-- Recent Activity -->
+        <div class="light-card">
+          <div class="flex justify-between items-center mb-16">
+            <div class="section-title-light" style="margin-bottom:0">Recent Activity</div>
+            <a href="rides.html" class="btn btn-outline-light btn-sm">View All</a>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">🟢</div>
+            <div style="flex:1">
+              <div class="activity-text">New driver registered — <span>Marcus T.</span></div>
+              <div class="activity-sub">2 minutes ago</div>
+            </div>
+            <span class="badge badge-success-l">New</span>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">🔵</div>
+            <div style="flex:1">
+              <div class="activity-text">Ride <span>#RDC-28491</span> completed in Downtown</div>
+              <div class="activity-sub">5 minutes ago</div>
+            </div>
+            <span class="badge badge-primary-l">Ride</span>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">🔴</div>
+            <div style="flex:1">
+              <div class="activity-text">Driver <span>K. Patel</span> flagged — 3 complaints</div>
+              <div class="activity-sub">12 minutes ago</div>
+            </div>
+            <span class="badge badge-danger-l">Alert</span>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">🟡</div>
+            <div style="flex:1">
+              <div class="activity-text">Payment dispute for ride <span>#RDC-28420</span></div>
+              <div class="activity-sub">28 minutes ago</div>
+            </div>
+            <span class="badge badge-warning-l">Dispute</span>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">🟢</div>
+            <div style="flex:1">
+              <div class="activity-text">Payout processed — <span>$18,420</span> to 142 drivers</div>
+              <div class="activity-sub">1 hour ago</div>
+            </div>
+            <span class="badge badge-success-l">Payout</span>
+          </div>
+        </div>
+
+        <!-- Quick Actions + System Health -->
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="light-card">
+            <div class="section-title-light">Quick Actions</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <a href="drivers.html" class="btn btn-primary-light btn-block">👥 Manage Drivers</a>
+              <a href="rides.html"   class="btn btn-outline-light btn-block">🚗 View Live Rides</a>
+              <a href="reports.html" class="btn btn-outline-light btn-block">📈 Generate Report</a>
+              <button class="btn btn-outline-light btn-block">💳 Review Payments</button>
+            </div>
+          </div>
+          <div class="light-card">
+            <div class="section-title-light">System Health</div>
+            <div class="health-row">
+              <span class="health-label">API Response</span>
+              <div class="flex items-center gap-6">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--lp-success)"></div>
+                <span style="font-size:13px;font-weight:600;color:var(--lp-success)">48ms</span>
+              </div>
+            </div>
+            <div class="health-row">
+              <span class="health-label">Match Rate</span>
+              <span style="font-size:13px;font-weight:600;color:var(--lp-success)">97.4%</span>
+            </div>
+            <div class="health-row">
+              <span class="health-label">Server Uptime</span>
+              <span style="font-size:13px;font-weight:600;color:var(--lp-success)">99.98%</span>
+            </div>
+            <div class="health-row">
+              <span class="health-label">Payment Gateway</span>
+              <div class="flex items-center gap-6">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--lp-success)"></div>
+                <span style="font-size:13px;font-weight:600;color:var(--lp-success)">Operational</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script src="../../js/api.js"></script>
+  <script>
+    checkAuth();
+    /*
+    document.getElementById('kpi-rides').textContent   = ADMIN_STATS.totalRidesToday.toLocaleString();
+    document.getElementById('kpi-drivers').textContent = ADMIN_STATS.activeDrivers;
+    document.getElementById('kpi-revenue').textContent = '$' + (ADMIN_STATS.revenueToday / 1000).toFixed(1) + 'K';
+    document.getElementById('kpi-rating').textContent  = ADMIN_STATS.avgRating + ' ⭐';
+    */
+  </script>
+
+</body>
+</html>

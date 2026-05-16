@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo — Ride History</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/passenger/history.css">
+</head>
+<body class="dark">
+
+  <header class="dark-header">
+    <a href="../../index.html" class="logo"><em>Ride</em>Co</a>
+    <nav class="dark-nav">
+      <a href="../../index.html" style="color:var(--dp-sub);font-size:12px">⬅ Welcome</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 6px"></div>
+      <a href="dashboard.html">🏠 Home</a>
+      <a href="history.html" class="nav-active">📋 History</a>
+      <a href="payment.html">💳 Payment</a>
+      <div class="avatar avatar-dark avatar-sm">AM</div>
+    </nav>
+  </header>
+
+  <div class="page-content">
+
+    <div class="flex justify-between items-center mb-24">
+      <h2 class="section-title" style="margin-bottom:0">Ride History</h2>
+      <div class="flex gap-8">
+        <select class="dark-input" style="width:auto;padding:8px 14px">
+          <option>All Time</option>
+          <option>Last 30 Days</option>
+          <option>Last 7 Days</option>
+        </select>
+        <button class="btn btn-outline-dark btn-sm">📥 Export</button>
+      </div>
+    </div>
+
+    <div class="grid-4 mb-24">
+      <div class="stat-card-dark">
+        <span class="stat-icon">🚗</span>
+        <div class="stat-value">47</div>
+        <div class="stat-label">Total Rides</div>
+      </div>
+      <div class="stat-card-dark">
+        <span class="stat-icon">💰</span>
+        <div class="stat-value">$482</div>
+        <div class="stat-label">Total Spent</div>
+      </div>
+      <div class="stat-card-dark">
+        <span class="stat-icon">📍</span>
+        <div class="stat-value">142 mi</div>
+        <div class="stat-label">Total Distance</div>
+      </div>
+      <div class="stat-card-dark">
+        <span class="stat-icon">⭐</span>
+        <div class="stat-value">4.8</div>
+        <div class="stat-label">Avg Rating Given</div>
+      </div>
+    </div>
+
+    <div class="dark-card">
+      <div class="dark-label mb-16">RECENT TRIPS</div>
+      <table class="table-dark">
+        <thead>
+          <tr>
+            <th>Date</th><th>From → To</th><th>Driver</th>
+            <th>Distance</th><th>Duration</th><th>Fare</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div style="color:var(--dp-text)">Jan 18, 2025</div><div style="font-size:11px;color:var(--dp-sub)">2:34 PM</div></td>
+            <td><div style="font-size:13.5px;font-weight:600;color:#fff">123 Main St</div><div style="font-size:12px;color:var(--dp-sub)">→ Grand Central Terminal</div></td>
+            <td><div class="flex items-center gap-8"><div class="avatar avatar-dark avatar-sm" style="width:28px;height:28px;font-size:11px">JR</div><span style="font-size:13px">James R.</span></div></td>
+            <td>3.2 mi</td><td>14 min</td>
+            <td style="font-weight:700;color:#fff">$10.74</td>
+            <td><span class="badge badge-success">Completed</span></td>
+          </tr>
+          <tr>
+            <td><div>Jan 16, 2025</div><div style="font-size:11px;color:var(--dp-sub)">9:15 AM</div></td>
+            <td><div style="font-weight:600;color:#fff">Office Park, 5th Ave</div><div style="font-size:12px;color:var(--dp-sub)">→ Central Station</div></td>
+            <td><div class="flex items-center gap-8"><div class="avatar avatar-dark avatar-sm" style="width:28px;height:28px;font-size:11px;background:#00C853">SA</div><span style="font-size:13px">Sarah A.</span></div></td>
+            <td>5.8 mi</td><td>22 min</td>
+            <td style="font-weight:700;color:#fff">$16.40</td>
+            <td><span class="badge badge-success">Completed</span></td>
+          </tr>
+          <tr>
+            <td><div>Jan 12, 2025</div><div style="font-size:11px;color:var(--dp-sub)">11:20 AM</div></td>
+            <td><div style="font-weight:600;color:#fff">JFK Airport</div><div style="font-size:12px;color:var(--dp-sub)">→ Midtown Hotel</div></td>
+            <td><div class="flex items-center gap-8"><div class="avatar avatar-dark avatar-sm" style="width:28px;height:28px;font-size:11px;background:#FF4444">DL</div><span style="font-size:13px">Driver</span></div></td>
+            <td>—</td><td>—</td>
+            <td style="font-weight:700;color:var(--dp-danger)">$0.00</td>
+            <td><span class="badge badge-danger">Cancelled</span></td>
+          </tr>
+          <tr>
+            <td><div>Jan 10, 2025</div><div style="font-size:11px;color:var(--dp-sub)">6:05 PM</div></td>
+            <td><div style="font-weight:600;color:#fff">Downtown Plaza</div><div style="font-size:12px;color:var(--dp-sub)">→ North Side Apartments</div></td>
+            <td><div class="flex items-center gap-8"><div class="avatar avatar-dark avatar-sm" style="width:28px;height:28px;font-size:11px;background:#AB47BC">PL</div><span style="font-size:13px">Paul L.</span></div></td>
+            <td>6.7 mi</td><td>28 min</td>
+            <td style="font-weight:700;color:#fff">$19.80</td>
+            <td><span class="badge badge-success">Completed</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="flex justify-between items-center mt-16" style="padding:0 4px">
+      <span style="font-size:13px;color:var(--dp-sub)">Showing 4 of 47 rides</span>
+      <div class="flex gap-8">
+        <button class="btn btn-outline-dark btn-sm">← Prev</button>
+        <button class="btn btn-ghost btn-sm" style="background:var(--dp-accent);color:#fff">1</button>
+        <button class="btn btn-outline-dark btn-sm">2</button>
+        <button class="btn btn-outline-dark btn-sm">3</button>
+        <button class="btn btn-outline-dark btn-sm">Next →</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/ui.js"></script>
+
+</body>
+</html>

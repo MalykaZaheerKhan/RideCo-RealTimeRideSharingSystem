@@ -1,0 +1,166 @@
+/* ================================================================
+   landing.css — LAYER 3
+   Only for index.html. Nothing here is used on any other page.
+   Link: base.css + layouts.css + landing.css
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. HERO SECTION
+   .lp-hero          (full viewport height flex column)
+   .lp-hero-glow     (purple radial blob, top-right, decorative)
+   .lp-hero-body     (flex row: left text + right cards, padding 120px 80px)
+   .lp-hero-left     (text column, max-width 560px)
+   .lp-hero-right    (mini stat cards, flex 0 0 360px)
+   .lp-eyebrow       (small uppercase accent label above headline)
+   .lp-eyebrow::before (short accent line)
+   .lp-h1            (68px Syne bold headline)
+   .lp-h1 em         (accent-colored word inside headline)
+   .lp-hero-desc     (subtitle paragraph, max-width 420px)
+   .lp-hero-cta      (flex row of CTA buttons)
+   .lp-hero-note     ("No credit card required" small text)
+
+   Mini stat cards (right side):
+   .lp-mini-card       (individual card)
+   .lp-mini-card-label ("RIDES COMPLETED" label)
+   .lp-mini-card-val   (big number "1M+")
+   .lp-mini-card-sub   (small subtext below number)
+
+   @media (max-width: 800px) {
+     .lp-hero-body  { flex-direction: column; padding: 80px 24px; }
+     .lp-hero-right { flex: none; width: 100%; }
+   }
+   ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   2. DIVIDER LINE
+   .lp-divider-line  (1px horizontal separator between sections)
+   ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   3. SECTION LABELS & HEADINGS (shared across landing sections)
+   .lp-section-label       (small uppercase accent label)
+   .lp-section-label::before (short accent line)
+   .lp-section-h2          (40px Syne section heading)
+   .lp-section-h2 em       (accent-colored word)
+   ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   4. ANIMATED STATS BAR
+   .lp-stats-bar   (flex row of stat items, targeted by JS observer)
+   .lp-stat-item   (individual stat: number + label)
+   .cnt-num        (the animating number, has data-target attribute)
+   .cnt-suffix     (suffix text like "+" or "★")
+   ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   5. HOW IT WORKS SECTION
+   .lp-how         (section wrapper, padding 96px 80px, max-width 1200px)
+   .lp-steps       (4-column grid, 1px gap dividers)
+   .lp-step        (individual step card)
+   .lp-step-n      (step number "01" "02"...)
+   .lp-step-icon-wrap (emoji icon wrapper)
+   .lp-step-title  (step heading)
+   .lp-step-desc   (step description)
+   ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   6. RIDE TYPES SECTION (Economy / Comfort / XL)
+   .lp-rides         (section wrapper, dark card background)
+   .lp-rides-inner   (max-width 1200px centered)
+   .lp-rides-grid    (3-column grid with 1px gap dividers)
+   .lp-ride-item     (individual ride type card)
+   .lp-ride-item:hover
+   .lp-ride-item.popular::after  ("Popular" badge top-right)
+   .lp-ride-emoji    (large emoji icon)
+   .lp-ride-name     (type name, Syne font)
+   .lp-ride-desc     (description text)
+   .lp-ride-price-row (bottom row: from label + price)
+   .lp-from          ("FROM" label)
+   .lp-price-num     (price number, Syne font)
+   ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   7. FEATURES SECTION
+   .lp-features      (section wrapper, padding 96px 80px)
+   .lp-feat-grid     (2-column grid, 1px gap dividers)
+   .lp-feat-item     (feature row: icon box + text)
+   .lp-feat-item:hover
+   .lp-feat-icon     (small dark box with emoji)
+   .lp-feat-title    (feature name)
+   .lp-feat-desc     (feature description)
+   ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   8. TRUSTED USERS SECTION
+   .lp-trusted         (section wrapper, dark card background)
+   .lp-trusted-inner   (max-width 1200px centered)
+   .lp-users-row       (4-column grid of user cards)
+   .lp-user-card       (individual user card)
+   .lp-user-av         (avatar circle)
+   .lp-user-av::after  (green verified checkmark badge)
+   .lp-user-name       (name text)
+   .lp-user-meta       ("47 rides" meta)
+   .lp-trust-row       (flex row of trust pills)
+   .lp-trust-pill      ("🔒 Secure Payments" pill)
+   ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   9. REVIEWS SECTION
+   .lp-reviews          (section wrapper)
+   .lp-reviews-header   (flex row: rating summary + "See all" link)
+   .lp-overall-rating   (big number + stars + count)
+   .lp-rat-big          ("4.9" large number)
+   .lp-rat-stars        (star row below number)
+   .lp-rat-count        ("2,841 reviews")
+   .lp-reviews-grid     (2-column grid, 1px gap dividers)
+   .lp-review-card      (individual review card)
+   .lp-review-card.wide (full-width featured review)
+   .lp-review-top       (flex row: user + stars)
+   .lp-review-user      (avatar + name + date)
+   .lp-review-av        (reviewer avatar)
+   .lp-review-name      (reviewer name)
+   .lp-review-date      ("Chicago · Dec 2024")
+   .lp-review-stars-sm  (small stars, right-aligned)
+   .lp-review-text      (review body)
+   .lp-review-tag       ("🚗 Economy · 3.1 mi" tag)
+   .lp-review-helpful   ("👍 18 helpful" interactive button)
+   ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   10. DOWNLOAD / APP CTA SECTION
+   .lp-download          (section wrapper)
+   .lp-download-inner    (flex row: text left + features right)
+   .lp-dl-h2             ("Your ride, in your pocket" heading)
+   .lp-dl-sub            (subtitle paragraph)
+   .lp-dl-btns           (flex row of store buttons)
+   .lp-dl-btn            (individual store button)
+   .lp-dl-btn-icon       (app icon emoji)
+   .lp-dl-btn-sub        ("Download on the" small text)
+   .lp-dl-btn-name       ("App Store" large text)
+   .lp-dl-features       (right column feature list)
+   .lp-dl-feat           (feature row: icon + text)
+   .lp-dl-feat-icon      (feature emoji)
+   ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   11. DRIVER CTA SECTION
+   .lp-driver            (section wrapper, flex row)
+   .lp-driver-h2         ("Earn on your schedule" heading)
+   .lp-driver-sub        (subtitle paragraph)
+   .lp-driver-stats      (grid of driver stat numbers)
+   .lp-driver-stat       (individual stat block)
+   .lp-driver-stat-num   (big colored number)
+   .lp-driver-stat-label (label below number)
+   ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   12. FOOTER
+   .lp-footer           (footer wrapper, dark bg)
+   .lp-footer-top       (flex row: logo + link columns)
+   .lp-footer-logo      ("RideCo" text)
+   .lp-footer-tagline   (tagline below logo)
+   .lp-footer-col-title (column heading)
+   .lp-footer-links     (flex column of links)
+   .lp-footer-link      (individual link)
+   .lp-footer-bottom    (copyright bar)
+   ---------------------------------------------------------------- */

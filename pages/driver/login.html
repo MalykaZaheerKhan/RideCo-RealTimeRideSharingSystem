@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo — Driver Login</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+</head>
+<body class="dark">
+
+  <header class="dark-header">
+    <a href="../../index.html" class="logo"><em>Ride</em>Co</a>
+    <nav class="dark-nav">
+      <a href="../../index.html">← Home</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 8px"></div>
+      <a href="../passenger/login.html" class="btn btn-outline-dark btn-sm" style="padding:7px 16px">Passenger Login</a>
+      <a href="../admin/login.html" style="color:var(--dp-sub);font-size:12px">Admin</a>
+    </nav>
+  </header>
+
+  <div class="auth-body">
+    <div class="auth-card" style="max-width:440px">
+
+      <!-- Header with icon -->
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px">
+        <div>
+          <div class="auth-title" style="margin-bottom:4px">Driver Portal</div>
+          <div style="font-size:13.5px;color:var(--dp-sub)">Sign in to start earning</div>
+        </div>
+        <div style="background:rgba(0,200,83,0.12);border:1px solid rgba(0,200,83,0.25);width:48px;height:48px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:22px">🚗</div>
+      </div>
+
+      <!-- Teaser stats -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:24px">
+        <div style="background:var(--dp-bg);border:1px solid var(--dp-border);border-radius:var(--radius-sm);padding:12px;text-align:center">
+          <div style="font-family:var(--font-display);font-size:18px;font-weight:800;color:var(--dp-success)">80%</div>
+          <div style="font-size:10px;color:var(--dp-sub);text-transform:uppercase;letter-spacing:0.5px;margin-top:2px">You Keep</div>
+        </div>
+        <div style="background:var(--dp-bg);border:1px solid var(--dp-border);border-radius:var(--radius-sm);padding:12px;text-align:center">
+          <div style="font-family:var(--font-display);font-size:18px;font-weight:800;color:#fff">$243</div>
+          <div style="font-size:10px;color:var(--dp-sub);text-transform:uppercase;letter-spacing:0.5px;margin-top:2px">Avg/Month</div>
+        </div>
+        <div style="background:var(--dp-bg);border:1px solid var(--dp-border);border-radius:var(--radius-sm);padding:12px;text-align:center">
+          <div style="font-family:var(--font-display);font-size:18px;font-weight:800;color:var(--dp-warning)">4.9★</div>
+          <div style="font-size:10px;color:var(--dp-sub);text-transform:uppercase;letter-spacing:0.5px;margin-top:2px">Avg Rating</div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="form-group">
+        <label class="dark-label">Driver ID or Email</label>
+        <input id="driver-email" class="dark-input" type="text" placeholder="driver@rideco.com">
+      </div>
+      <div class="form-group">
+        <label class="dark-label">Password</label>
+        <input id="driver-password" class="dark-input" type="password" placeholder="Enter your password">
+      </div>
+      <div class="flex justify-between items-center mb-20" style="font-size:13px">
+        <label style="display:flex;align-items:center;gap:8px;color:var(--dp-sub);cursor:pointer">
+          <input type="checkbox" style="accent-color:var(--dp-success)"> Stay signed in
+        </label>
+        <span style="color:var(--dp-accent);cursor:pointer;font-size:13px">Forgot password?</span>
+      </div>
+
+      <button id="driver-login-btn" class="btn btn-success btn-block btn-lg">Sign In to Drive →</button>
+
+      <div class="divider"></div>
+      <div class="auth-footer" style="margin:0">
+        Not a driver yet? <span style="color:var(--dp-success);font-weight:600;cursor:pointer">Apply to drive →</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/api.js"></script>
+  <script>
+    document.getElementById('driver-login-btn').addEventListener('click', function() {
+      const email    = document.getElementById('driver-email').value.trim();
+      const password = document.getElementById('driver-password').value;
+      if (!email || !password) { alert('Please fill in all fields'); return; }
+      // PROTOTYPING:
+      window.location.href = 'dashboard.html';
+      // BACKEND READY: loginDriver(email, password);
+    });
+  </script>
+
+</body>
+</html>

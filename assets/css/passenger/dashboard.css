@@ -1,0 +1,108 @@
+/* DASHBOARD LAYOUT */
+.ph-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: calc(100vh - 64px);
+}
+
+/* SIDEBAR */
+.ph-sidebar {
+  background: var(--dp-card);
+  border-right: 1px solid var(--dp-border);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+.ph-greeting {
+  padding: 8px 4px 16px;
+  border-bottom: 1px solid var(--dp-border);
+  margin-bottom: 8px;
+}
+.ph-greeting-sub {
+  font-size: 12px;
+  color: var(--dp-sub);
+  margin-bottom: 2px;
+}
+.ph-greeting-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+.ph-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--dp-sub);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-body);
+}
+.ph-nav-item:hover {
+  background: var(--dp-bg);
+  color: var(--dp-text);
+}
+.ph-nav-item.active {
+  background: rgba(124,77,255,0.1);
+  color: var(--dp-accent);
+  font-weight: 600;
+}
+.ph-nav-icon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+/* MAIN AREA */
+.ph-main {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--dp-bg);
+  padding: 32px;
+}
+.ph-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+/* RIDE HISTORY ITEMS */
+.ride-history-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--dp-card);
+  border: 1px solid var(--dp-border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+.ride-history-item:hover { border-color: var(--dp-accent); }
+.ride-route { flex: 1; }
+.ride-from { font-size: 13.5px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+.ride-to   { font-size: 13px; color: var(--dp-sub); }
+.ride-date { font-size: 12px; color: var(--dp-sub); }
+.ride-fare {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+/* <a> tags used as sidebar nav items — match button behaviour */
+a.ph-nav-item {
+  text-decoration: none;
+  width: 100%;
+}

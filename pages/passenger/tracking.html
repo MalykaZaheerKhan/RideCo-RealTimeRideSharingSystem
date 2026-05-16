@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo — Track Ride</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/passenger/tracking.css">
+</head>
+<body class="dark">
+
+  <header class="dark-header">
+    <a href="../../index.html" class="logo"><em>Ride</em>Co</a>
+    <nav class="dark-nav">
+      <a href="../../index.html" style="color:var(--dp-sub);font-size:12px">⬅ Welcome</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 6px"></div>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <div id="ride-active-badge" style="display:none" class="badge badge-accent">
+        🟢 Ride Active
+      </div>
+    </nav>
+  </header>
+
+  <!-- SCREEN 1 — SEARCHING -->
+  <div id="screen-searching" class="search-layout">
+
+    <aside class="search-panel">
+      <div class="pulse-container" style="width:100px;height:100px;margin:0 auto">
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring"></div>
+        <div class="pulse-dot"></div>
+      </div>
+      <div>
+        <div class="searching-label">Finding your driver</div>
+        <div class="searching-sub">Connecting to nearby drivers…</div>
+      </div>
+      <div class="dark-card2 w-full">
+        <div class="dark-label mb-12">TRIP DETAILS</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="flex items-center gap-12">
+            <div class="location-dot green" style="width:10px;height:10px;flex-shrink:0"></div>
+            <span style="font-size:13.5px;color:var(--dp-text)">123 Main Street, Downtown</span>
+          </div>
+          <div style="width:1px;height:16px;background:var(--dp-border);margin-left:5px"></div>
+          <div class="flex items-center gap-12">
+            <div class="location-dot purple" style="width:10px;height:10px;flex-shrink:0"></div>
+            <span style="font-size:13.5px;color:var(--dp-text)">Grand Central Terminal</span>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="flex justify-between">
+          <span style="font-size:13px;color:var(--dp-sub)">Estimated fare</span>
+          <span style="font-size:14px;font-weight:700;color:#fff">$10.40</span>
+        </div>
+      </div>
+      <div style="text-align:center;padding:12px 0">
+        <div style="font-size:12px;color:var(--dp-sub);margin-bottom:8px">DRIVERS NEARBY</div>
+        <div class="flex justify-center gap-8">
+          <span style="font-size:22px">🚗</span>
+          <span style="font-size:22px;opacity:0.5">🚗</span>
+          <span style="font-size:22px;opacity:0.3">🚗</span>
+        </div>
+        <div style="font-size:13px;color:var(--dp-success);margin-top:8px;font-weight:600">
+          3 drivers available
+        </div>
+      </div>
+      <!-- Cancel is navigation — no logic needed -->
+      <a href="dashboard.html" class="btn btn-outline-dark btn-block">Cancel Request</a>
+      <!-- Simulate needs to call a JS function — stays as button -->
+      <button class="btn btn-accent btn-block" onclick="switchToAssigned()" style="margin-top:8px">
+        Simulate: Driver Found
+      </button>
+    </aside>
+
+    <div class="map-placeholder" style="min-height:500px">
+      <div class="map-route">
+        <div class="map-dot origin"></div>
+        <div class="map-car" style="animation:spin 4s linear infinite;font-size:18px">🚗</div>
+        <div class="map-car" style="top:30%;right:20%;bottom:auto;left:auto;font-size:16px;opacity:0.5">🚗</div>
+        <div class="map-car" style="top:60%;right:35%;bottom:auto;left:auto;font-size:16px;opacity:0.3">🚗</div>
+      </div>
+      <div class="map-inner" style="position:relative;z-index:2">
+        <span class="map-icon" style="animation:blink 1.5s ease infinite">📡</span>
+        <div class="map-label">Locating nearby drivers</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SCREEN 2 — DRIVER ASSIGNED -->
+  <div id="screen-assigned" class="home-layout" style="display:none">
+
+    <aside class="home-panel">
+      <div class="badge badge-success" style="width:fit-content">✓ Driver Assigned</div>
+      <div class="eta-bar">
+        <div>
+          <div class="eta-value">4 <span style="font-size:16px;font-weight:400;color:var(--dp-sub)">min</span></div>
+          <div class="eta-label">Estimated Arrival</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:13px;color:var(--dp-sub)">0.6 mi away</div>
+          <div style="font-size:22px;margin-top:4px">🚗</div>
+        </div>
+      </div>
+      <div>
+        <div class="dark-label mb-8">YOUR DRIVER</div>
+        <div class="driver-card-dark">
+          <div class="avatar avatar-dark avatar-lg">JR</div>
+          <div class="driver-info-row">
+            <div class="driver-name">James Rivera</div>
+            <div class="driver-rating">⭐ 4.92
+              <span style="font-weight:400;color:var(--dp-sub);font-size:12px">(847 rides)</span>
+            </div>
+            <div class="driver-meta" style="margin-top:4px">Toyota Camry · Silver</div>
+          </div>
+          <div class="car-plate">KAB 7821</div>
+        </div>
+      </div>
+      <div class="dark-card2">
+        <div class="dark-label mb-12">TRIP OVERVIEW</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="flex items-center gap-12">
+            <div class="location-dot green" style="width:10px;height:10px;flex-shrink:0;margin-left:1px"></div>
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:#fff">123 Main Street</div>
+              <div style="font-size:11px;color:var(--dp-sub)">Pickup</div>
+            </div>
+          </div>
+          <div style="width:1.5px;height:18px;background:var(--dp-border);margin-left:5px"></div>
+          <div class="flex items-center gap-12">
+            <div class="location-dot purple" style="width:10px;height:10px;flex-shrink:0;margin-left:1px"></div>
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:#fff">Grand Central Terminal</div>
+              <div style="font-size:11px;color:var(--dp-sub)">Destination</div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="flex justify-between text-sm color-sub">
+          <span>Estimated fare</span>
+          <span style="color:#fff;font-weight:600">$10.40</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <button class="btn btn-ghost" style="flex-direction:column;gap:4px;padding:12px 8px">
+          <span style="font-size:20px">📞</span>
+          <span style="font-size:12px">Call Driver</span>
+        </button>
+        <button class="btn btn-ghost" style="flex-direction:column;gap:4px;padding:12px 8px">
+          <span style="font-size:20px">💬</span>
+          <span style="font-size:12px">Message</span>
+        </button>
+      </div>
+      <!-- Cancel ride is an action — could trigger backend cancel -->
+      <button class="btn btn-danger btn-block" onclick="goTo('dashboard.html')">Cancel Ride</button>
+      <button class="btn btn-accent btn-block" onclick="switchToInProgress()">
+        ▶ Simulate: Ride Started
+      </button>
+    </aside>
+
+    <div class="map-placeholder" style="min-height:500px">
+      <div class="map-route">
+        <div class="map-dot origin"></div>
+        <div class="map-car" style="bottom:40%;left:40%">🚗</div>
+      </div>
+      <div class="map-inner" style="position:relative;z-index:2">
+        <span class="map-icon">🚗</span>
+        <div class="map-label">Driver en route<br>
+          <span style="font-size:11px;color:#444">Live position updates</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SCREEN 3 — IN PROGRESS -->
+  <div id="screen-inprogress" class="home-layout" style="display:none">
+
+    <aside class="home-panel">
+      <div class="badge badge-accent" style="width:fit-content">🚗 In Progress</div>
+      <div class="eta-bar">
+        <div>
+          <div class="eta-value">8 <span style="font-size:16px;font-weight:400;color:var(--dp-sub)">min</span></div>
+          <div class="eta-label">To Destination</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:13px;color:var(--dp-sub)">2.1 mi left</div>
+          <div style="font-size:12px;color:var(--dp-success);margin-top:4px;font-weight:600">On Route</div>
+        </div>
+      </div>
+      <div class="driver-card-dark">
+        <div class="avatar avatar-dark avatar-md">JR</div>
+        <div class="driver-info-row">
+          <div class="driver-name">James Rivera</div>
+          <div class="driver-rating">⭐ 4.92</div>
+        </div>
+        <div class="car-plate">KAB 7821</div>
+      </div>
+      <div class="dark-card2">
+        <div class="dark-label mb-12">ROUTE STATUS</div>
+        <div style="position:relative;padding-left:20px">
+          <div style="position:absolute;left:4px;top:6px;bottom:6px;width:2px;
+                      background:linear-gradient(180deg,var(--dp-success),var(--dp-accent))"></div>
+          <div style="margin-bottom:16px">
+            <div style="font-size:12px;color:var(--dp-success);font-weight:600;margin-bottom:2px">✓ PICKED UP</div>
+            <div style="font-size:13.5px;color:#fff;font-weight:600">123 Main Street</div>
+          </div>
+          <div style="margin-bottom:16px">
+            <div style="font-size:12px;color:var(--dp-warning);font-weight:600;margin-bottom:2px">● IN TRANSIT</div>
+            <div style="font-size:13px;color:var(--dp-sub)">Passing 5th Avenue</div>
+          </div>
+          <div>
+            <div style="font-size:12px;color:var(--dp-sub);font-weight:600;margin-bottom:2px">○ DESTINATION</div>
+            <div style="font-size:13.5px;color:var(--dp-text);font-weight:600">Grand Central Terminal</div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="stat-card-dark" style="padding:14px">
+          <div style="font-size:11px;color:var(--dp-sub);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px">Speed</div>
+          <div style="font-family:var(--font-display);font-size:22px;font-weight:700;color:#fff">28
+            <span style="font-size:12px;font-weight:400;color:var(--dp-sub)">mph</span>
+          </div>
+        </div>
+        <div class="stat-card-dark" style="padding:14px">
+          <div style="font-size:11px;color:var(--dp-sub);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px">Fare</div>
+          <div style="font-family:var(--font-display);font-size:22px;font-weight:700;color:#fff">$8.20</div>
+        </div>
+      </div>
+      <div class="flex gap-8">
+        <button class="btn btn-ghost flex-1">📞 Call</button>
+        <button class="btn btn-ghost flex-1">💬 Message</button>
+        <button class="btn btn-ghost flex-1">🆘 SOS</button>
+      </div>
+      <!-- Trip ended is an action — goes through goTo for auth check -->
+      <button class="btn btn-accent btn-block" onclick="goTo('payment.html')">
+        ▶ Simulate: Trip Ended
+      </button>
+    </aside>
+
+    <div class="map-placeholder" style="min-height:500px">
+      <div class="map-route">
+        <div class="map-dot origin" style="bottom:30%;left:25%"></div>
+        <div class="map-dot dest"></div>
+        <div class="map-line"></div>
+        <div class="map-car">🚗</div>
+      </div>
+      <div class="map-inner" style="position:relative;z-index:2">
+        <span class="map-icon">🛣️</span>
+        <div class="map-label">Live route tracking</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script>
+    function switchToAssigned() {
+      document.getElementById('screen-searching').style.display = 'none';
+      document.getElementById('screen-assigned').style.display  = 'grid';
+    }
+    function switchToInProgress() {
+      document.getElementById('screen-assigned').style.display   = 'none';
+      document.getElementById('screen-inprogress').style.display = 'grid';
+      document.getElementById('ride-active-badge').style.display = 'flex';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo — Active Ride</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/driver/active-ride.css">
+</head>
+<body class="dark">
+
+  <!-- DYNAMIC HEADER — updates when screen changes -->
+  <header class="dark-header">
+    <a href="../../index.html" class="logo"><em>Ride</em>Co</a>
+    <nav class="dark-nav" id="active-header-nav">
+      <span class="badge badge-warning" style="padding:6px 14px;border-radius:20px;font-size:12px">🧭 Navigating to Pickup</span>
+    </nav>
+  </header>
+
+  <!-- ================================================================
+       SCREEN 1 — EN ROUTE TO PICKUP
+       ================================================================ -->
+  <div id="screen-navigation">
+
+    <aside class="home-panel">
+
+      <span class="badge badge-warning" style="width:fit-content">🧭 En Route to Pickup</span>
+
+      <!-- ETA Bar -->
+      <div class="eta-bar">
+        <div>
+          <div class="eta-value">3 <span style="font-size:16px;font-weight:400;color:var(--dp-sub)">min</span></div>
+          <div class="eta-label">To Pickup</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:13px;color:var(--dp-sub)">0.4 mi left</div>
+          <div style="font-size:22px;margin-top:4px">📍</div>
+        </div>
+      </div>
+
+      <!-- Next Turn Card -->
+      <div class="dark-card2">
+        <div class="dark-label mb-12">NEXT TURN</div>
+        <div class="flex items-center gap-16">
+          <div class="next-turn-arrow">↰</div>
+          <div>
+            <div class="next-turn-street">Turn left on 5th Ave</div>
+            <div class="next-turn-dist">In 0.2 miles</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Route Steps -->
+      <div class="dark-card2">
+        <div class="dark-label mb-12">ROUTE</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="flex items-center gap-12">
+            <span style="font-size:12px;color:var(--dp-warning);font-weight:600;width:24px">NOW</span>
+            <span style="font-size:13px;color:var(--dp-text)">Head north on Broadway</span>
+          </div>
+          <div class="flex items-center gap-12">
+            <span style="font-size:12px;color:var(--dp-sub);width:24px">0.2</span>
+            <span style="font-size:13px;color:var(--dp-sub)">↰ Turn left on 5th Ave</span>
+          </div>
+          <div class="flex items-center gap-12">
+            <span style="font-size:12px;color:var(--dp-sub);width:24px">0.4</span>
+            <span style="font-size:13px;color:var(--dp-sub)">📍 Arrive at 123 Main St</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Passenger Card -->
+      <div class="driver-card-dark">
+        <div class="avatar avatar-dark avatar-md">AM</div>
+        <div class="driver-info-row">
+          <div id="active-passenger-name" class="driver-name">Alex Morgan</div>
+          <div id="active-passenger-rating" style="font-size:12px;color:var(--dp-sub)">Passenger ⭐ 4.7</div>
+        </div>
+        <div class="flex gap-8">
+          <button class="btn btn-ghost btn-sm">📞</button>
+          <button class="btn btn-ghost btn-sm">💬</button>
+        </div>
+      </div>
+
+      <!-- Arrived Button -->
+      <button class="btn btn-success btn-block btn-lg" id="arrived-btn">
+        ✓ Arrived at Pickup
+      </button>
+
+    </aside>
+
+    <!-- MAP -->
+    <div class="map-placeholder" style="min-height:500px">
+      <div class="map-route">
+        <div class="map-dot origin"></div>
+        <div class="map-car">🚗</div>
+      </div>
+      <div class="map-inner" style="position:relative;z-index:2">
+        <span class="map-icon">🧭</span>
+        <div class="map-label">Turn-by-turn navigation active</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================================================================
+       SCREEN 2 — PASSENGER ONBOARD / ACTIVE RIDE
+       ================================================================ -->
+  <div id="screen-active">
+
+    <aside class="home-panel">
+
+      <span class="badge badge-success" style="width:fit-content">🚗 Passenger Onboard</span>
+
+      <!-- ETA Bar -->
+      <div class="eta-bar">
+        <div>
+          <div id="active-eta" class="eta-value">8 <span style="font-size:16px;font-weight:400;color:var(--dp-sub)">min</span></div>
+          <div class="eta-label">To Destination</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:13px;color:var(--dp-sub)">2.8 mi left</div>
+          <div style="font-size:12px;color:var(--dp-success);font-weight:600;margin-top:4px">● Live</div>
+        </div>
+      </div>
+
+      <!-- Destination + Next Turn -->
+      <div class="dark-card2">
+        <div class="dark-label mb-8">DESTINATION</div>
+        <div class="flex items-center gap-10 mb-16">
+          <div class="location-dot purple" style="flex-shrink:0"></div>
+          <div id="active-destination" style="font-size:14px;font-weight:600;color:#fff">Grand Central Terminal</div>
+        </div>
+        <div class="dark-label mb-8">NEXT TURN</div>
+        <div class="flex items-center gap-12">
+          <div class="next-turn-arrow">↱</div>
+          <div>
+            <div id="next-street" class="next-turn-street">Right on 42nd St</div>
+            <div id="next-distance" class="next-turn-dist">In 0.6 mi</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Passenger Card -->
+      <div class="driver-card-dark">
+        <div class="avatar avatar-dark avatar-md" id="active-passenger-avatar">AM</div>
+        <div class="driver-info-row">
+          <div class="driver-name">Alex Morgan</div>
+          <div class="driver-rating" style="color:var(--dp-accent)">Passenger ⭐ 4.7</div>
+          <div style="font-size:12px;color:var(--dp-sub);margin-top:2px">Economy · 1 passenger</div>
+        </div>
+        <div class="flex gap-8">
+          <button class="btn btn-ghost btn-sm">📞</button>
+          <button class="btn btn-ghost btn-sm">💬</button>
+        </div>
+      </div>
+
+      <!-- Running Fare -->
+      <div class="dark-card2">
+        <div class="flex justify-between items-center">
+          <span style="color:var(--dp-sub);font-size:13px">Running Fare</span>
+          <span id="running-fare" class="running-fare-amount">$8.60</span>
+        </div>
+        <div class="flex justify-between items-center mt-8">
+          <span style="color:var(--dp-sub);font-size:12px">Distance covered</span>
+          <span id="distance-covered" style="font-size:13px;color:var(--dp-text)">1.8 mi</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="grid-2" style="gap:12px">
+        <button id="report-issue-btn" class="btn btn-outline-dark"
+                onclick="goTo('dashboard.html')">
+          ⚠ Report Issue
+        </button>
+        <button id="end-ride-btn" class="btn btn-success btn-lg">
+          🏁 End Ride
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- MAP -->
+    <div class="map-placeholder" style="min-height:500px">
+      <div class="map-route">
+        <div class="map-dot origin" style="bottom:30%;left:25%"></div>
+        <div class="map-dot dest"></div>
+        <div class="map-line"></div>
+        <div class="map-car">🚗</div>
+      </div>
+      <div class="map-inner" style="position:relative;z-index:2">
+        <span class="map-icon">🛣️</span>
+        <div class="map-label">Navigating to destination</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script src="../../js/api.js"></script>
+  <script>
+    checkAuth();
+
+    // Switch from navigation screen to active ride screen
+    document.getElementById('arrived-btn').addEventListener('click', function() {
+      document.getElementById('screen-navigation').style.display = 'none';
+      document.getElementById('screen-active').style.display     = 'grid';
+
+      // Update header badge
+      document.getElementById('active-header-nav').innerHTML =
+        '<span class="badge badge-success" style="padding:6px 14px;border-radius:20px;font-size:12px">🚗 Ride Active</span>';
+    });
+
+    // Running fare ticker (active screen)
+    let fare = 8.60, miles = 1.8;
+    const fareTimer = setInterval(function() {
+      fare  += 0.05;
+      miles += 0.02;
+      document.getElementById('running-fare').textContent    = '$' + fare.toFixed(2);
+      document.getElementById('distance-covered').textContent = miles.toFixed(1) + ' mi';
+    }, 3000);
+
+    // End Ride
+    document.getElementById('end-ride-btn').addEventListener('click', function() {
+      clearInterval(fareTimer);
+      // PROTOTYPING:
+      window.location.href = 'earnings.html';
+      // BACKEND READY: endRide(rideId);
+    });
+
+    // PROTOTYPING: populate from data.js
+    /*
+    document.getElementById('active-passenger-name').textContent    = 'Alex Morgan';
+    document.getElementById('active-passenger-rating').textContent  = 'Passenger ⭐ 4.7';
+    document.getElementById('active-passenger-avatar').textContent  = 'AM';
+    */
+  </script>
+
+</body>
+</html>

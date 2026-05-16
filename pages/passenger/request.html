@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo — Request a Ride</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/passenger/request.css">
+</head>
+<body class="dark">
+
+  <header class="dark-header">
+    <a href="../../index.html" class="logo"><em>Ride</em>Co</a>
+    <nav class="dark-nav">
+      <a href="../../index.html" style="color:var(--dp-sub);font-size:12px">⬅ Welcome</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 6px"></div>
+      <a href="dashboard.html">← Dashboard</a>
+      <a href="history.html">📋 History</a>
+      <a href="payment.html">💳 Payment</a>
+      <div style="width:1px;height:20px;background:var(--dp-border);margin:0 8px"></div>
+      <div class="avatar avatar-dark avatar-sm">AM</div>
+    </nav>
+  </header>
+
+  <div class="req-layout">
+
+    <!-- LEFT PANEL -->
+    <aside class="req-panel">
+
+      <div class="req-step-header">
+        <div class="req-step-pill done">✓ Route</div>
+        <div style="flex:1;height:1px;background:var(--dp-border)"></div>
+        <div class="req-step-pill active">2 Ride Type</div>
+        <div style="flex:1;height:1px;background:var(--dp-border)"></div>
+        <div class="req-step-pill">3 Confirm</div>
+      </div>
+
+      <div class="req-panel-inner">
+
+        <!-- WHERE TO -->
+        <div>
+          <div class="dark-label mb-8">YOUR JOURNEY</div>
+          <div class="req-location-box">
+            <div class="req-loc-row">
+              <div class="req-loc-dot" style="background:var(--dp-success)"></div>
+              <input class="req-loc-input" placeholder="Pickup location"
+                     value="123 Main Street, Downtown">
+              <button class="req-swap-btn" title="Swap">⇅</button>
+            </div>
+            <div class="req-loc-row">
+              <div class="req-loc-dot" style="background:var(--dp-accent)"></div>
+              <input id="dest-input" class="req-loc-input" placeholder="Where to?">
+            </div>
+          </div>
+        </div>
+
+        <!-- QUICK DESTINATIONS -->
+        <div>
+          <div class="dark-label mb-8">QUICK DESTINATIONS</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div class="input-location quick-dest-item" style="cursor:pointer">
+              <span style="font-size:14px">🏠</span>
+              <span class="quick-dest-label" style="font-size:13px;color:var(--dp-sub)">Home — 123 Main Street</span>
+            </div>
+            <div class="input-location quick-dest-item" style="cursor:pointer">
+              <span style="font-size:14px">💼</span>
+              <span class="quick-dest-label" style="font-size:13px;color:var(--dp-sub)">Work — 450 Park Ave</span>
+            </div>
+            <div class="input-location quick-dest-item" style="cursor:pointer">
+              <span style="font-size:14px">🕐</span>
+              <span class="quick-dest-label" style="font-size:13px;color:var(--dp-sub)">Grand Central Terminal</span>
+            </div>
+            <div class="input-location quick-dest-item" style="cursor:pointer">
+              <span style="font-size:14px">🕐</span>
+              <span class="quick-dest-label" style="font-size:13px;color:var(--dp-sub)">JFK International Airport</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- RIDE TYPE -->
+        <div>
+          <div class="dark-label mb-8">CHOOSE RIDE TYPE</div>
+          <div class="req-ride-types">
+            <div class="req-type-card selected">
+              <div class="req-type-icon">🚗</div>
+              <div class="req-type-name">Economy</div>
+              <div class="req-type-price">$8–12</div>
+            </div>
+            <div class="req-type-card">
+              <div class="req-type-icon">🚙</div>
+              <div class="req-type-name">Comfort</div>
+              <div class="req-type-price">$14–18</div>
+            </div>
+            <div class="req-type-card">
+              <div class="req-type-icon">🚐</div>
+              <div class="req-type-name">XL</div>
+              <div class="req-type-price">$20–26</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WHEN -->
+        <div>
+          <div class="dark-label mb-8">WHEN?</div>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-accent btn-sm flex-1">🚀 Ride Now</button>
+            <button class="btn btn-outline-dark btn-sm flex-1">📅 Schedule</button>
+          </div>
+        </div>
+
+        <!-- PROMO CODE -->
+        <div>
+          <div class="dark-label mb-8">PROMO CODE</div>
+          <div style="display:flex;gap:8px">
+            <input class="dark-input" placeholder="Enter code" style="flex:1">
+            <button class="btn btn-ghost btn-sm">Apply</button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- FARE ESTIMATE -->
+        <div>
+          <div class="dark-label mb-10">FARE ESTIMATE</div>
+          <div class="req-fare-card">
+            <div>
+              <div class="req-fare-num">$10.40</div>
+              <div class="req-fare-sub">3.2 mi · ~12 min</div>
+            </div>
+            <div style="text-align:right">
+              <div class="badge badge-success mb-4">Low Surge</div>
+              <div style="font-size:11px;color:var(--dp-sub)">1.0× pricing</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAYMENT -->
+        <div class="dark-card2">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-10">
+              <span style="font-size:18px">💳</span>
+              <div>
+                <div style="font-size:13.5px;font-weight:600;color:#fff">Visa •••• 4242</div>
+                <div style="font-size:11px;color:var(--dp-sub)">Default payment</div>
+              </div>
+            </div>
+            <!-- Change payment is an action within this page, not navigation -->
+            <a href="payment.html" class="btn btn-ghost btn-sm">Change</a>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <!-- Request Ride is an action button — it submits the ride request -->
+        <button id="request-ride-btn" class="btn btn-white btn-block btn-lg"
+                style="margin-top:auto"
+                onclick="goTo('tracking.html')">
+          🚗 Request Ride — $10.40
+        </button>
+        <a href="dashboard.html" class="btn btn-outline-dark btn-block btn-sm">Cancel</a>
+
+      </div>
+    </aside>
+
+    <!-- MAP -->
+    <div class="req-map">
+      <div class="map-route">
+        <div class="map-dot origin"></div>
+        <div class="map-dot dest"></div>
+        <div class="map-line"></div>
+        <div class="map-car">🚗</div>
+      </div>
+      <div class="map-inner" style="position:relative;z-index:2">
+        <span class="map-icon">🗺️</span>
+        <div class="map-label">Enter destination to see route<br>
+          <span style="font-size:11px;color:#444">Live map will appear here</span>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+                  background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);
+                  border:1px solid var(--dp-border);border-radius:var(--radius);
+                  padding:12px 20px;display:flex;align-items:center;gap:12px;z-index:2">
+        <span style="font-size:18px">🚗</span>
+        <span style="font-size:13px;color:var(--dp-success);font-weight:600">3 drivers nearby</span>
+        <span style="font-size:12px;color:var(--dp-sub)">· avg 68s wait</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/ui.js"></script>
+
+</body>
+</html>

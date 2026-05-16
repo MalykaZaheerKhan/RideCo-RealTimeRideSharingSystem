@@ -1,0 +1,13 @@
+[
+  {
+    "id": "usr_001",
+    "firstName": "Alex", "lastName": "Morgan", "initials": "AM",
+    "email": "alex@example.com", "phone": "+1 234 567 8900",
+    "rating": 4.8, "totalRides": 47, "totalSpent": 482,
+    "totalMiles": 142, "walletBalance": 24.50,
+    "savedPlaces": [
+      { "icon": "🏠", "name": "Home",  "address": "123 Main Street, Downtown" },
+      { "icon": "💼", "name": "Work",  "address": "450 Park Ave, Midtown"     }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ride_001",
+    "date": "Jan 18, 2025", "time": "2:34 PM",
+    "from": "123 Main St", "to": "Grand Central Terminal",
+    "driver": "James R.", "driverInitials": "JR",
+    "distance": "3.2 mi", "duration": "14 min",
+    "fare": "$10.74", "type": "Comfort", "status": "completed"
+  },
+  {
+    "id": "ride_002",
+    "date": "Jan 16, 2025", "time": "10:05 AM",
+    "from": "Office Park", "to": "Central Station",
+    "driver": "Sarah A.", "driverInitials": "SA",
+    "distance": "5.1 mi", "duration": "22 min",
+    "fare": "$16.40", "type": "Economy", "status": "completed"
+  },
+  {
+    "id": "ride_003",
+    "date": "Jan 12, 2025", "time": "8:20 AM",
+    "from": "JFK Airport", "to": "Midtown Hotel",
+    "driver": null, "driverInitials": null,
+    "distance": "—", "duration": "—",
+    "fare": "$0.00", "type": "XL", "status": "cancelled"
+  }
+]

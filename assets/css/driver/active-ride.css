@@ -1,0 +1,50 @@
+/* ================================================================
+   driver/active-ride.css — LAYER 3
+   Only for pages/driver/active-ride.html
+   Link: base.css + layouts.css + driver/active-ride.css
+   ================================================================
+   Two screens in one page:
+   #screen-navigation  — en route to pickup
+   #screen-active      — passenger onboard, navigating to destination
+   ================================================================ */
+
+/* SCREEN TOGGLE — only one visible at a time */
+#screen-navigation {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  min-height: calc(100vh - 64px);
+}
+#screen-active {
+  display: none;
+  grid-template-columns: 380px 1fr;
+  min-height: calc(100vh - 64px);
+}
+
+/* NEXT TURN CARD */
+.next-turn-arrow {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+.next-turn-street {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+.next-turn-dist {
+  font-size: 12px;
+  color: var(--dp-sub);
+}
+
+/* RUNNING FARE TICKER */
+.running-fare-amount {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dp-success);
+}
+.running-fare-dist {
+  font-size: 12px;
+  color: var(--dp-sub);
+  margin-top: 4px;
+}

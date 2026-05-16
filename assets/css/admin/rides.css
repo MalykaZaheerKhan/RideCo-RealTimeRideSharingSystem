@@ -1,0 +1,57 @@
+/* ================================================================
+   admin/rides.css — LAYER 3
+   Only for pages/admin/rides.html
+   ================================================================ */
+
+/* STATUS FILTER TABS */
+.rides-filter-bar { display: flex; gap: 4px; margin-bottom: 20px; }
+.rides-filter-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--lp-sub);
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: var(--transition);
+  border-radius: 0;
+}
+.rides-filter-btn:hover { color: var(--lp-primary); }
+.rides-filter-btn.active { color: var(--lp-primary); border-bottom-color: var(--lp-primary); font-weight: 600; }
+
+/* LIVE COUNT BADGE */
+.live-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #E8F5E9;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  color: #2E7D32;
+}
+.live-count-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: #2E7D32;
+  border-radius: 50%;
+  animation: blink 1.5s ease infinite;
+}
+
+/* SOS ALERT BANNER */
+.sos-banner {
+  background: #FFEBEE;
+  border: 1px solid #FFCDD2;
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sos-banner-icon { font-size: 22px; flex-shrink: 0; }
+.sos-banner-title { font-weight: 700; color: #C62828; }
+.sos-banner-sub   { font-size: 12px; color: var(--lp-sub); margin-top: 2px; }

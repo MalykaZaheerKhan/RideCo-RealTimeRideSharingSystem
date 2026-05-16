@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideCo Admin — Drivers</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layouts.css">
+  <link rel="stylesheet" href="../../assets/css/admin/drivers.css">
+</head>
+<body class="light">
+
+  <header class="light-header">
+    <a href="../../index.html" class="logo-light">
+      <em>Ride</em>Co <span class="admin-tag">ADMIN</span>
+    </a>
+    <nav class="light-nav">
+      <a href="../../index.html" style="color:var(--lp-sub);font-size:12px">⬅ Site</a>
+      <div style="width:1px;height:20px;background:var(--lp-border);margin:0 6px"></div>
+      <a href="dashboard.html">📊 Dashboard</a>
+      <a href="drivers.html" class="nav-active">👥 Drivers</a>
+      <a href="rides.html">🚗 Rides</a>
+      <a href="reports.html">📈 Reports</a>
+      <div class="avatar avatar-light avatar-sm" style="margin-left:8px">AD</div>
+    </nav>
+  </header>
+
+  <div class="admin-layout">
+
+    <aside class="admin-sidebar">
+      <div class="sidebar-section">MAIN</div>
+      <a href="dashboard.html" class="sidebar-item"><span class="sidebar-icon">📊</span> Dashboard</a>
+      <a href="drivers.html"   class="sidebar-item active"><span class="sidebar-icon">👥</span> Drivers</a>
+      <a href="rides.html"     class="sidebar-item"><span class="sidebar-icon">🚗</span> Live Rides</a>
+      <a href="reports.html"   class="sidebar-item"><span class="sidebar-icon">📈</span> Reports</a>
+      <div class="sidebar-section">SYSTEM</div>
+      <a href="#" class="sidebar-item"><span class="sidebar-icon">👤</span> Users</a>
+      <a href="#" class="sidebar-item"><span class="sidebar-icon">💳</span> Payments</a>
+      <a href="#" class="sidebar-item"><span class="sidebar-icon">⚙️</span> Settings</a>
+      <a href="login.html" class="sidebar-item" style="margin-top:auto;color:var(--lp-danger)">
+        <span class="sidebar-icon">🚪</span> Logout
+      </a>
+    </aside>
+
+    <main class="admin-main">
+
+      <div class="flex justify-between items-center mb-24">
+        <div>
+          <h1 style="font-family:var(--font-display);font-size:26px;font-weight:800;color:var(--lp-text)">
+            Driver Management
+          </h1>
+          <p style="color:var(--lp-sub);font-size:13.5px;margin-top:4px">
+            2,847 registered drivers · 2,391 active
+          </p>
+        </div>
+        <div class="flex gap-8">
+          <button class="btn btn-outline-light btn-sm">📥 Export</button>
+          <button class="btn btn-primary-light btn-sm">+ Add Driver</button>
+        </div>
+      </div>
+
+      <!-- FILTER BAR -->
+      <div class="light-card mb-24" style="padding:16px 20px">
+        <div class="drivers-filter-bar">
+          <input id="driver-search" class="light-input" style="flex:1;min-width:220px"
+                 placeholder="🔍 Search driver name, ID, or phone…">
+          <select id="driver-status-filter" class="light-input" style="width:auto;padding:11px 14px">
+            <option>All Status</option>
+            <option>Active</option>
+            <option>Pending Approval</option>
+            <option>Suspended</option>
+          </select>
+          <select class="light-input" style="width:auto;padding:11px 14px">
+            <option>All Ratings</option>
+            <option>4.5+</option>
+            <option>4.0–4.4</option>
+            <option>Below 4.0</option>
+          </select>
+          <button class="btn btn-primary-light btn-sm">Apply Filters</button>
+          <button class="btn btn-outline-light btn-sm">Reset</button>
+        </div>
+      </div>
+
+      <!-- STAT CHIPS -->
+      <div class="stat-chips">
+        <div class="stat-chip">
+          <span class="badge badge-success-l">Active</span>
+          <span class="stat-chip-count">2,391</span>
+        </div>
+        <div class="stat-chip">
+          <span class="badge badge-warning-l">Pending</span>
+          <span class="stat-chip-count">84</span>
+        </div>
+        <div class="stat-chip">
+          <span class="badge badge-danger-l">Suspended</span>
+          <span class="stat-chip-count">27</span>
+        </div>
+      </div>
+
+      <!-- DRIVERS TABLE -->
+      <div class="light-card">
+        <table class="table-light">
+          <thead>
+            <tr>
+              <th>Driver</th><th>Phone</th><th>Vehicle</th>
+              <th>Rating</th><th>Rides</th><th>Earnings</th>
+              <th>Status</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="drivers-tbody">
+
+            <tr>
+              <td><div class="flex items-center gap-10">
+                <div class="avatar avatar-light avatar-sm">JR</div>
+                <div>
+                  <div style="font-weight:600;color:var(--lp-text)">James Rivera</div>
+                  <div style="font-size:11px;color:var(--lp-sub)">DRV-00142</div>
+                </div>
+              </div></td>
+              <td style="color:var(--lp-sub)">+1 212 555 0142</td>
+              <td><div style="font-size:13px">Toyota Camry</div><div style="font-size:11px;color:var(--lp-sub)">KAB 7821</div></td>
+              <td><span style="color:#F59E0B;font-weight:700">⭐ 4.92</span></td>
+              <td style="font-weight:600">847</td>
+              <td style="font-weight:700;color:var(--lp-success)">$14,820</td>
+              <td><span class="badge badge-success-l">Active</span></td>
+              <td><div class="flex gap-6">
+                <button class="btn btn-outline-light btn-sm" style="padding:6px 10px;font-size:12px">View</button>
+                <button class="btn btn-outline-light btn-sm" style="padding:6px 10px;font-size:12px">Edit</button>
+                <button class="btn btn-sm" style="padding:6px 10px;font-size:12px;background:#FFEBEE;color:#C62828;border:none">Suspend</button>
+              </div></td>
+            </tr>
+
+            <tr>
+              <td><div class="flex items-center gap-10">
+                <div class="avatar avatar-sm" style="background:#00897B;color:#fff">SA</div>
+                <div>
+                  <div style="font-weight:600;color:var(--lp-text)">Sarah Alvarez</div>
+                  <div style="font-size:11px;color:var(--lp-sub)">DRV-00218</div>
+                </div>
+              </div></td>
+              <td style="color:var(--lp-sub)">+1 212 555 0218</td>
+              <td><div style="font-size:13px">Honda Civic</div><div style="font-size:11px;color:var(--lp-sub)">LMN 4412</div></td>
+              <td><span style="color:#F59E0B;font-weight:700">⭐ 4.85</span></td>
+              <td style="font-weight:600">612</td>
+              <td style="font-weight:700;color:var(--lp-success)">$11,240</td>
+              <td><span class="badge badge-success-l">Active</span></td>
+              <td><div class="flex gap-6">
+                <button class="btn btn-outline-light btn-sm" style="padding:6px 10px;font-size:12px">View</button>
+                <button class="btn btn-outline-light btn-sm" style="padding:6px 10px;font-size:12px">Edit</button>
+                <button class="btn btn-sm" style="padding:6px 10px;font-size:12px;background:#FFEBEE;color:#C62828;border:none">Suspend</button>
+              </div></td>
+            </tr>
+
+            <tr>
+              <td><div class="flex items-center gap-10">
+                <div class="avatar avatar-sm" style="background:#F59E0B;color:#111">MT</div>
+                <div>
+                  <div style="font-weight:600;color:var(--lp-text)">Marcus Thompson</div>
+                  <div style="font-size:11px;color:var(--lp-sub)">DRV-00391</div>
+                </div>
+              </div></td>
+              <td style="color:var(--lp-sub)">+1 212 555 0391</td>
+              <td><div style="font-size:13px">Ford Explorer</div><div style="font-size:11px;color:var(--lp-sub)">TXY 9901</div></td>
+              <td><span style="color:#F59E0B;font-weight:700">⭐ —</span></td>
+              <td style="font-weight:600">0</td>
+              <td style="font-weight:700;color:var(--lp-sub)">$0</td>
+              <td><span class="badge badge-warning-l">Pending</span></td>
+              <td><div class="flex gap-6">
+                <button class="btn btn-primary-light btn-sm" style="padding:6px 10px;font-size:12px">Approve</button>
+                <button class="btn btn-outline-light btn-sm" style="padding:6px 10px;font-size:12px">Review</button>
+                <button class="btn btn-sm" style="padding:6px 10px;font-size:12px;background:#FFEBEE;color:#C62828;border:none">Reject</button>
+              </div></td>
+            </tr>
+
+            <tr>
+              <td><div class="flex items-center gap-10">
+                <div class="avatar avatar-sm" style="background:#AB47BC;color:#fff">KP</div>
+                <div>
+                  <div style="font-weight:600;color:var(--lp-text)">K. Patel</div>
+                  <div style="font-size:11px;color:var(--lp-sub)">DRV-00088</div>
+                </div>
+              </div></td>
+              <td style="color:var(--lp-sub)">+1 212 555 0088</td>
+              <td><div style="font-size:13px">Hyundai Elantra</div><div style="font-size:11px;color:var(--lp-sub)">PKL 2200</div></td>
+              <td><span style="color:#EF4444;font-weight:700">⭐ 3.8</span></td>
+              <td style="font-weight:600">284</td>
+              <td style="font-weight:700;color:var(--lp-sub)">$4,820</td>
+              <td><span class="badge badge-danger-l">Flagged</span></td>
+              <td><div class="flex gap-6">
+                <button class="btn btn-outline-light btn-sm" style="padding:6px 10px;font-size:12px">View</button>
+                <button class="btn btn-sm" style="padding:6px 10px;font-size:12px;background:#FFEBEE;color:#C62828;border:none">Suspend</button>
+              </div></td>
+            </tr>
+
+            <tr>
+              <td><div class="flex items-center gap-10">
+                <div class="avatar avatar-sm" style="background:#EF4444;color:#fff">PL</div>
+                <div>
+                  <div style="font-weight:600;color:var(--lp-text)">Paul Lopez</div>
+                  <div style="font-size:11px;color:var(--lp-sub)">DRV-00156</div>
+                </div>
+              </div></td>
+              <td style="color:var(--lp-sub)">+1 212 555 0156</td>
+              <td><div style="font-size:13px">Chevy Tahoe</div><div style="font-size:11px;color:var(--lp-sub)">GHJ 5540</div></td>
+              <td><span style="color:#F59E0B;font-weight:700">⭐ 4.74</span></td>
+              <td style="font-weight:600">1,102</td>
+              <td style="font-weight:700;color:var(--lp-success)">$22,480</td>
+              <td><span class="badge badge-danger-l">Suspended</span></td>
+              <td><div class="flex gap-6">
+                <button class="btn btn-success-light btn-sm" style="padding:6px 10px;font-size:12px">Reinstate</button>
+                <button class="btn btn-outline-light btn-sm" style="padding:6px 10px;font-size:12px">View</button>
+              </div></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="flex justify-between items-center mt-16">
+        <span style="font-size:13px;color:var(--lp-sub)">Showing 5 of 2,847 drivers</span>
+        <div class="flex gap-8">
+          <button class="btn btn-outline-light btn-sm">← Prev</button>
+          <button class="btn btn-primary-light btn-sm">1</button>
+          <button class="btn btn-outline-light btn-sm">2</button>
+          <button class="btn btn-outline-light btn-sm">3</button>
+          <button class="btn btn-outline-light btn-sm">Next →</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../../js/nav.js"></script>
+  <script src="../../js/data.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script src="../../js/api.js"></script>
+  <script>
+    checkAuth();
+    /*
+    renderDriversTable(DRIVERS_LIST);
+    // BACKEND READY: fetchDriversList().then(data => renderDriversTable(data));
+    */
+  </script>
+
+</body>
+</html>
