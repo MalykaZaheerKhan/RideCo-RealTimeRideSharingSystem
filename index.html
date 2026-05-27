@@ -4,60 +4,386 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RideCo — Tap. Ride. Arrive.</title>
-  <!--
-    Copy this Google Fonts <link> from the original HTML:
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  -->
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layouts.css">
   <link rel="stylesheet" href="assets/css/landing.css">
 </head>
-<body>
+<body class="dark">
 
-<!--
-  ================================================================
-  LANDING PAGE
-  ================================================================
-  Copy the ENTIRE contents of <div id="p-landing"> from the
-  original HTML and paste it here as the body content.
+  <!-- ══════════════════════════════════
+       HEADER  (uses .dark-header from base.css)
+  ══════════════════════════════════ -->
+  <header class="dark-header">
+    <div class="logo"><em>Ride</em>Co</div>
+    <nav class="dark-nav">
+      <a href="#lp-how">How It Works</a>
+      <a href="#lp-rides">Ride Types</a>
+      <span style="width:1px;height:20px;background:var(--dp-border);margin:0 6px;display:inline-block"></span>
+      <a href="pages/driver/login.html" style="color:var(--dp-success)">🚗 Drive</a>
+      <a href="pages/admin/login.html" style="color:var(--dp-sub);font-size:12px">🛡 Admin</a>
+      <span style="width:1px;height:20px;background:var(--dp-border);margin:0 6px;display:inline-block"></span>
+      <a href="pages/passenger/login.html"   class="btn btn-outline-dark btn-sm">Sign In</a>
+      <a href="pages/passenger/register.html" class="btn btn-accent btn-sm" style="margin-left:4px">Register Free</a>
+    </nav>
+  </header>
 
-  Sections inside (top to bottom):
-    <header class="dark-header">         nav: logo + sign in + register + driver
-    <section class="lp-hero">            big headline, CTA, mini stat cards
-    <div class="lp-stats-bar">           animated counters
-    <div class="lp-divider-line">
-    <section class="lp-how">             How It Works steps
-    <section class="lp-rides">           Economy / Comfort / XL cards
-    <section class="lp-features">        features grid
-    <section class="lp-trusted">         trusted users + trust pills
-    <section class="lp-reviews">         rating overview + review cards
-    <section class="lp-download">        App Store / Play / Web CTAs
-    <section> (driver CTA)               Earn on your schedule
-    <footer class="lp-footer">           links + copyright
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section class="lp-hero">
+    <div class="lp-hero-glow"></div>
+    <div class="lp-eyebrow">Now live in 40+ cities</div>
+    <h1 class="lp-h1">
+  
+  <span class="lp-letter" style="--i:1"><em>R</em></span>
+  <span class="lp-letter" style="--i:2"><em>i</em></span>
+  <span class="lp-letter" style="--i:3"><em>d</em></span>
+  <span class="lp-letter" style="--i:4"><em>e</em></span>
+  <span class="lp-letter" style="--i:5">C</span>
+  <span class="lp-letter" style="--i:6">o</span>
+</h1>
+    <p class="lp-tagline">Tap &nbsp;·&nbsp; Ride &nbsp;·&nbsp; Arrive</p>
+    <p class="lp-hero-desc">
+      The smarter way to get around. Instant driver matching,
+      real-time tracking, and rides you can trust — every single time.
+    </p>
+    <div class="lp-hero-cta">
+      <a href="pages/passenger/register.html" class="btn btn-white btn-lg">Get Started Free →</a>
+      <a href="pages/passenger/login.html"    class="btn btn-outline-dark btn-lg">Sign In</a>
+    </div>
+    <p class="lp-hero-note">No credit card required &nbsp;·&nbsp; Cancel anytime &nbsp;·&nbsp; 24/7 support</p>
+  </section>
 
-  LINKS TO UPDATE — replace onclick="go('...')" with href:
-    onclick="go('p-login')"        →  href="pages/passenger/login.html"
-    onclick="go('p-register')"     →  href="pages/passenger/register.html"
-    onclick="go('p-driver-login')" →  href="pages/driver/login.html"
-    onclick="go('p-admin-login')"  →  href="pages/admin/login.html"
-  ================================================================
--->
+  <div class="lp-divider"></div>
 
-  <script src="assets/js/nav.js"></script>
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/api.js"></script>
-  <!--
-    NOTE: The script paths above assume you move the js/ folder
-    inside assets/. If you keep js/ at the root level use:
-    <script src="js/nav.js"></script>  etc.
-  -->
+  <!-- ══════════════════════════════════
+       HOW IT WORKS
+  ══════════════════════════════════ -->
+  <section id="lp-how">
+    <div class="lp-how">
+      <div class="lp-section-label">How It Works</div>
+      <div class="lp-section-h2">Ride in <em>four steps</em></div>
+      <div class="lp-steps">
 
-  <script>
-    /*
-      Stat counters + helpful buttons are already defined in ui.js
-      (sections 6 and 7). Nothing extra needed here.
-    */
-  </script>
+        <div class="lp-step">
+          <div class="lp-step-num">01</div>
+          <div class="lp-step-icon">📱</div>
+          <div class="lp-step-title">Create your account</div>
+          <p class="lp-step-desc">Sign up in under a minute. No credit card needed to get started.</p>
+        </div>
+
+        <div class="lp-step">
+          <div class="lp-step-num">02</div>
+          <div class="lp-step-icon">📍</div>
+          <div class="lp-step-title">Set your route</div>
+          <p class="lp-step-desc">Enter pickup and destination. See a live fare estimate before you book.</p>
+        </div>
+
+        <div class="lp-step">
+          <div class="lp-step-num">03</div>
+          <div class="lp-step-icon">⚡</div>
+          <div class="lp-step-title">Get matched instantly</div>
+          <p class="lp-step-desc">Our algorithm finds the nearest top-rated driver in under 90 seconds.</p>
+        </div>
+
+        <div class="lp-step">
+          <div class="lp-step-num">04</div>
+          <div class="lp-step-icon">✅</div>
+          <div class="lp-step-title">Arrive &amp; pay automatically</div>
+          <p class="lp-step-desc">Auto-pay on arrival. Rate your driver and we handle everything else.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="lp-divider"></div>
+
+  <!-- ══════════════════════════════════
+       RIDE TYPES
+  ══════════════════════════════════ -->
+  <section id="lp-rides" class="lp-rides">
+    <div class="lp-rides-inner">
+      <div class="lp-section-label">Ride Types</div>
+      <div class="lp-section-h2">Every ride, <em>your way</em></div>
+      <div class="lp-rides-grid">
+
+        <a href="pages/passenger/register.html" class="lp-ride-card">
+          <span class="lp-ride-emoji">🚗</span>
+          <div class="lp-ride-name">Economy</div>
+          <p class="lp-ride-desc">Affordable daily rides for solo travellers. Always clean, always on time.</p>
+          <div class="lp-ride-price-row">
+            <span class="lp-ride-from">From</span>
+            <span class="lp-ride-price">Rs. 150</span>
+          </div>
+        </a>
+
+        <a href="pages/passenger/register.html" class="lp-ride-card popular">
+          <span class="lp-ride-emoji">🚙</span>
+          <div class="lp-ride-name">Comfort</div>
+          <p class="lp-ride-desc">Premium cars, extra legroom, and our highest-rated drivers for a smoother ride.</p>
+          <div class="lp-ride-price-row">
+            <span class="lp-ride-from">From</span>
+            <span class="lp-ride-price">Rs. 200</span>
+          </div>
+        </a>
+
+        <a href="pages/passenger/register.html" class="lp-ride-card">
+          <span class="lp-ride-emoji">🚐</span>
+          <div class="lp-ride-name">XL</div>
+          <p class="lp-ride-desc">Spacious SUVs for groups up to 6. Great for families, events, and airports.</p>
+          <div class="lp-ride-price-row">
+            <span class="lp-ride-from">From</span>
+            <span class="lp-ride-price">Rs. 300</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="lp-divider"></div>
+
+  <!-- ══════════════════════════════════
+       FEATURES
+  ══════════════════════════════════ -->
+  <section>
+    <div class="lp-features">
+      <div class="lp-section-label">Why RideCo</div>
+      <div class="lp-section-h2">Built around <em>you</em></div>
+      <div class="lp-feat-grid">
+
+        <div class="lp-feat-item">
+          <div class="lp-feat-icon">📍</div>
+          <div>
+            <div class="lp-feat-title">Real-time tracking</div>
+            <p class="lp-feat-desc">Watch your driver navigate to you live on a map. Share your trip status with friends and family for extra peace of mind.</p>
+          </div>
+        </div>
+
+        <div class="lp-feat-item">
+          <div class="lp-feat-icon">🔒</div>
+          <div>
+            <div class="lp-feat-title">Safety first</div>
+            <p class="lp-feat-desc">Every driver is background-checked and verified. In-app SOS button and 24/7 support available on every trip.</p>
+          </div>
+        </div>
+
+        <div class="lp-feat-item">
+          <div class="lp-feat-icon">💳</div>
+          <div>
+            <div class="lp-feat-title">Seamless payments</div>
+            <p class="lp-feat-desc">Cards, Apple Pay, Google Pay, or your RideCo Wallet. Auto-pay at trip end — no fumbling, no cash.</p>
+          </div>
+        </div>
+
+        <div class="lp-feat-item">
+          <div class="lp-feat-icon">⭐</div>
+          <div>
+            <div class="lp-feat-title">Top-rated drivers</div>
+            <p class="lp-feat-desc">Only drivers with 4.5+ ratings stay on the platform. Consistent, reliable quality on every single ride.</p>
+          </div>
+        </div>
+
+        <div class="lp-feat-item">
+          <div class="lp-feat-icon">⚡</div>
+          <div>
+            <div class="lp-feat-title">Instant matching</div>
+            <p class="lp-feat-desc">97.4% match rate within 90 seconds. Our smart dispatch engine gets you moving fast, every time.</p>
+          </div>
+        </div>
+
+        <div class="lp-feat-item">
+          <div class="lp-feat-icon">💬</div>
+          <div>
+            <div class="lp-feat-title">In-app messaging</div>
+            <p class="lp-feat-desc">Message or call your driver directly from the app — no phone number sharing ever required.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="lp-divider"></div>
+
+  <!-- ══════════════════════════════════
+       TRUSTED COMMUNITY
+  ══════════════════════════════════ -->
+  <section class="lp-trusted">
+    <div class="lp-trusted-inner">
+      <div class="lp-section-label">Verified Community</div>
+      <div class="lp-section-h2">Trusted by <em>real people</em></div>
+
+      <div class="lp-users-row">
+        <div class="lp-user-card">
+          <div class="lp-user-av" style="background:var(--dp-accent)">AM</div>
+          <div>
+            <div class="lp-user-name">Sana Khan</div>
+            <div class="lp-user-meta">⭐ Gold Passenger · 47 rides</div>
+          </div>
+        </div>
+        <div class="lp-user-card">
+          <div class="lp-user-av" style="background:var(--dp-success);color:#111">JR</div>
+          <div>
+            <div class="lp-user-name">Ahmad Ali</div>
+            <div class="lp-user-meta" style="color:var(--dp-success)">🚗 Elite Driver · 847 trips</div>
+          </div>
+        </div>
+        <div class="lp-user-card">
+          <div class="lp-user-av" style="background:#E91E8C">SP</div>
+          <div>
+            <div class="lp-user-name">Sarah Ali</div>
+            <div class="lp-user-meta">⭐ Gold Passenger · 29 rides</div>
+          </div>
+        </div>
+        <div class="lp-user-card">
+          <div class="lp-user-av" style="background:var(--dp-warning);color:#111">KN</div>
+          <div>
+            <div class="lp-user-name">Alizey Rehman</div>
+            <div class="lp-user-meta" style="color:var(--dp-success)">🚗 Verified Driver · 312 trips</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lp-trust-row">
+        <div class="lp-trust-pill">🪪 ID Verified</div>
+        <div class="lp-trust-pill">🔒 Background Checked</div>
+        <div class="lp-trust-pill">📱 Phone Verified</div>
+        <div class="lp-trust-pill">💳 Payments Secured</div>
+        <div class="lp-trust-pill">⭐ Rating System</div>
+        <div class="lp-trust-pill">🛡️ 24/7 Monitoring</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lp-divider"></div>
+
+  <!-- ══════════════════════════════════
+       DOWNLOAD / APP CTA
+  ══════════════════════════════════ -->
+  <section class="lp-download">
+    <div class="lp-download-inner">
+      <div>
+        <div class="lp-section-label">Get the App</div>
+        <div class="lp-dl-h2">Your ride,<br><em>in your pocket</em></div>
+        <p class="lp-dl-sub">Download the RideCo app for the full experience — live maps, real-time alerts, and one-tap booking.</p>
+        <div class="lp-dl-btns">
+          <a href="pages/passenger/register.html" class="lp-dl-btn">
+            <span class="lp-dl-btn-icon">🍎</span>
+            <div>
+              <span class="lp-dl-btn-sub">Download on the</span>
+              <span class="lp-dl-btn-name">App Store</span>
+            </div>
+          </a>
+          <a href="pages/passenger/register.html" class="lp-dl-btn">
+            <span class="lp-dl-btn-icon">🤖</span>
+            <div>
+              <span class="lp-dl-btn-sub">Get it on</span>
+              <span class="lp-dl-btn-name">Google Play</span>
+            </div>
+          </a>
+          <a href="pages/passenger/register.html" class="lp-dl-btn" style="border-color:rgba(124,77,255,0.35)">
+            <span class="lp-dl-btn-icon">🌐</span>
+            <div>
+              <span class="lp-dl-btn-sub">Use in browser</span>
+              <span class="lp-dl-btn-name">Web App — Free</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="lp-dl-feats">
+        <div class="lp-dl-feat"><span class="lp-dl-feat-icon">🔔</span><div><strong>Push Notifications</strong> — Real-time driver updates and ETA alerts</div></div>
+        <div class="lp-dl-feat"><span class="lp-dl-feat-icon">🗺️</span><div><strong>Live Map</strong> — Watch your driver approach in real time</div></div>
+        <div class="lp-dl-feat"><span class="lp-dl-feat-icon">🔋</span><div><strong>Battery Optimized</strong> — Under 2% battery per ride session</div></div>
+        <div class="lp-dl-feat"><span class="lp-dl-feat-icon">📱</span><div><strong>iOS &amp; Android</strong> — Available on all modern devices</div></div>
+        <div class="lp-dl-feat"><span class="lp-dl-feat-icon">🔒</span><div><strong>Secure Payments</strong> — PCI-compliant, end-to-end encrypted</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lp-divider"></div>
+
+  <!-- ══════════════════════════════════
+       DRIVER earnings CTA
+  ══════════════════════════════════ -->
+  <section class="lp-driver">
+    <div class="lp-driver-inner">
+      <div>
+        <div class="lp-section-label">Drive With RideCo</div>
+        <div class="lp-driver-h2">Earn on<br><em>your schedule</em></div>
+        <p class="lp-driver-sub">Set your own hours, keep 80% of every fare, and get paid weekly. Join 2,800+ drivers already earning with RideCo.</p>
+        <div class="lp-driver-cta-row">
+          <a href="pages/driver/login.html" class="btn btn-success btn-lg">Start Driving →</a>
+          <a href="pages/driver/login.html" class="btn btn-outline-dark btn-lg">Learn More</a>
+        </div>
+      </div>
+      <div class="lp-driver-stats">
+        <div class="lp-driver-stat">
+          <div class="lp-driver-stat-num" style="color:var(--dp-success)">Rs. 70,000</div>
+          <div class="lp-driver-stat-label">Avg monthly earning</div>
+        </div>
+        <div class="lp-driver-stat">
+          <div class="lp-driver-stat-num" style="color:var(--dp-warning)">4.9 ★</div>
+          <div class="lp-driver-stat-label">Avg driver rating</div>
+        </div>
+        <div class="lp-driver-stat">
+          <div class="lp-driver-stat-num" style="color:#fff">80%</div>
+          <div class="lp-driver-stat-label">You keep per fare</div>
+        </div>
+        <div class="lp-driver-stat">
+          <div class="lp-driver-stat-num" style="color:#fff">2.8K</div>
+          <div class="lp-driver-stat-label">Active drivers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lp-divider"></div>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer class="lp-footer">
+    <div class="lp-footer-top">
+      <div>
+        <div class="lp-footer-logo"><em>Ride</em>Co</div>
+        <p class="lp-footer-tagline">The smarter way to get around — safe, fast, and always reliable.</p>
+      </div>
+      <div>
+        <div class="lp-footer-col-title">Passengers</div>
+        <div class="lp-footer-links">
+          <a href="pages/passenger/register.html" class="lp-footer-link">Sign Up</a>
+          <a href="pages/passenger/login.html"    class="lp-footer-link">Sign In</a>
+          <a href="#lp-how"                        class="lp-footer-link">How It Works</a>
+          <a href="#lp-rides"                      class="lp-footer-link">Ride Types</a>
+        </div>
+      </div>
+      <div>
+        <div class="lp-footer-col-title">Drivers</div>
+        <div class="lp-footer-links">
+          <a href="pages/driver/login.html" class="lp-footer-link">Driver Login</a>
+          <span class="lp-footer-link">Apply to Drive</span>
+          <span class="lp-footer-link">Earnings</span>
+        </div>
+      </div>
+      <div>
+        <div class="lp-footer-col-title">Company</div>
+        <div class="lp-footer-links">
+          <span class="lp-footer-link">About Us</span>
+          <a href="pages/admin/login.html" class="lp-footer-link">Admin Panel</a>
+          <span class="lp-footer-link">Contact</span>
+        </div>
+      </div>
+    </div>
+    <div class="lp-footer-bottom">
+      <span>© 2025 RideCo Inc. All rights reserved.</span>
+      <div class="lp-footer-bottom-links">
+        <span class="lp-footer-link">Privacy Policy</span>
+        <span class="lp-footer-link">Terms of Service</span>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
